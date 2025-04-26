@@ -16,7 +16,7 @@ Commit each file to its exact path as structured:
 
 Create a concise README.md within each subfolder to provide an accessible overview:
 
-Example: /GAIA-Platforms/Definitions/COAFI-APP/GAIA-air/README.md
+Example: /GAIA-Platforms/Definitions/COAFI-APP/GAIA-AIR/README.md
 
 # GAIA-AIR – CD-COATFI-AERODCP Framework
 
@@ -34,7 +34,7 @@ A technology-first approach for aerospace design, focusing on civil aviation sol
 
 For detailed specifications, please visit [CD-COATFI-AERODCP.md](./CD-COATFI-AERODCP.md).
 
-Use a similar concise template for GAIA-greentech and GAIA-space.
+Use a similar concise template for GAIA-GREENTECH and GAIA-SPACE.
 
 ⸻
 
