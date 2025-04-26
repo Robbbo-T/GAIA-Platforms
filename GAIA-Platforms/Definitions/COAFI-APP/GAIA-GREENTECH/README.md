@@ -1,4 +1,4 @@
-# GAIA-greentech – GT-COATFI-GREENTECH Framework
+# GAIA-GREENTECH – GT-COATFI-GREENTECH Framework
 
 **Green Technology, Component-Oriented, Advanced-Technology-First Implementation**
 
