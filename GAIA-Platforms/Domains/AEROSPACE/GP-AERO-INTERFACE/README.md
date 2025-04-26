@@ -91,6 +91,31 @@ This section governs:
 
 ---
 
+## 8. Compliance and Audits
+
+This section defines the compliance and audit procedures for the interface domains.
+
+### 8.1 Compliance Checkpoints
+
+| Checkpoint | Description | Responsible Entity |
+|:---|:---|:---|
+| Metadata Inclusion | Ensure all responses include required metadata blocks | QA Team |
+| Domain Classification | Verify correct domain classification for each prompt | AI Team |
+| Anti-Contamination | Confirm adherence to Anti-Contamination Rule (LUII-001) | Compliance Team |
+| Structuring | Validate standard output structuring | Documentation Team |
+
+### 8.2 Audit Frequency
+
+Audits will be conducted at regular intervals to ensure compliance with the interface domains. The audit frequency and criteria are as follows:
+
+| Interval | Criteria |
+|:---|:---|
+| Monthly | Random sampling of AI-generated responses |
+| Quarterly | Comprehensive review of all responses |
+| Annually | Full protocol compliance audit |
+
+---
+
 # 📋 Response Metadata
 
 ```plaintext
@@ -134,5 +159,4 @@ GP-AERO-INTERFACE/
 | TOC-GP-AERO-INTERFACE.md | Índice maestro de Interface Domains |
 
 ---
-
 

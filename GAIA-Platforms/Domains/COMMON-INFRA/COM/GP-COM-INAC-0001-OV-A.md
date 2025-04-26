@@ -111,6 +111,31 @@ Federated Ethical Execution (AMEDEO Compliance)
 
 ---
 
+## 9. Compliance and Audits
+
+This section defines the compliance and audit procedures for the overview.
+
+### 9.1 Compliance Checkpoints
+
+| Checkpoint | Description | Responsible Entity |
+|:---|:---|:---|
+| Metadata Inclusion | Ensure all responses include required metadata blocks | QA Team |
+| Domain Classification | Verify correct domain classification for each prompt | AI Team |
+| Anti-Contamination | Confirm adherence to Anti-Contamination Rule (LUII-001) | Compliance Team |
+| Structuring | Validate standard output structuring | Documentation Team |
+
+### 9.2 Audit Frequency
+
+Audits will be conducted at regular intervals to ensure compliance with the overview. The audit frequency and criteria are as follows:
+
+| Interval | Criteria |
+|:---|:---|
+| Monthly | Random sampling of AI-generated responses |
+| Quarterly | Comprehensive review of all responses |
+| Annually | Full protocol compliance audit |
+
+---
+
 # 📋 Response Metadata
 
 ```plaintext

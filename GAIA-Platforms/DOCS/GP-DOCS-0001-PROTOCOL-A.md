@@ -133,18 +133,29 @@ If the generated content has a natural extension potential, suggest:
 
 ---
 
-# 🛰️ End of Protocol     ---
-title: "GAIA Platforms – Semantic Source Classification Protocol"
-document_id: GP-DOCS-0002-PROTOCOL-A
-version: v1.0
-status: ACTIVE
-author: GAIA Platforms Initiative
-date: 2025-04-26
-tags:
-  - COAFI
-  - Documentation
-  - Source Validation
-  - Classification
-  - LUII-002
+## 6. Compliance and Audits
+
+This section defines the compliance and audit procedures for the protocol.
+
+### 6.1 Compliance Checkpoints
+
+| Checkpoint | Description | Responsible Entity |
+|:---|:---|:---|
+| Metadata Inclusion | Ensure all responses include required metadata blocks | QA Team |
+| Domain Classification | Verify correct domain classification for each prompt | AI Team |
+| Anti-Contamination | Confirm adherence to Anti-Contamination Rule (LUII-001) | Compliance Team |
+| Structuring | Validate standard output structuring | Documentation Team |
+
+### 6.2 Audit Frequency
+
+Audits will be conducted at regular intervals to ensure compliance with the protocol. The audit frequency and criteria are as follows:
+
+| Interval | Criteria |
+|:---|:---|
+| Monthly | Random sampling of AI-generated responses |
+| Quarterly | Comprehensive review of all responses |
+| Annually | Full protocol compliance audit |
+
 ---
 
+# 🛰️ End of Protocol

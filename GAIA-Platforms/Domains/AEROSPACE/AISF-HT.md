@@ -87,6 +87,31 @@ AISF-HT acts as a **pillar** for:
 
 ---
 
+## VII. Compliance and Audits
+
+This section defines the compliance and audit procedures for the framework.
+
+### VII.1 Compliance Checkpoints
+
+| Checkpoint | Description | Responsible Entity |
+|:---|:---|:---|
+| Metadata Inclusion | Ensure all responses include required metadata blocks | QA Team |
+| Domain Classification | Verify correct domain classification for each prompt | AI Team |
+| Anti-Contamination | Confirm adherence to Anti-Contamination Rule (LUII-001) | Compliance Team |
+| Structuring | Validate standard output structuring | Documentation Team |
+
+### VII.2 Audit Frequency
+
+Audits will be conducted at regular intervals to ensure compliance with the framework. The audit frequency and criteria are as follows:
+
+| Interval | Criteria |
+|:---|:---|
+| Monthly | Random sampling of AI-generated responses |
+| Quarterly | Comprehensive review of all responses |
+| Annually | Full protocol compliance audit |
+
+---
+
 # 🧭 Navigation
 
 - [GAIA Platforms Canonical Index](../../README.md)

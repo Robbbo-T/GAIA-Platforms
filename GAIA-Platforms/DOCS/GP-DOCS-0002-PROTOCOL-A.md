@@ -105,4 +105,29 @@ confidence_level: 60%
 
 ---
 
+## 6. Compliance and Audits
+
+This section defines the compliance and audit procedures for the protocol.
+
+### 6.1 Compliance Checkpoints
+
+| Checkpoint | Description | Responsible Entity |
+|:---|:---|:---|
+| Metadata Inclusion | Ensure all sources include required metadata blocks | QA Team |
+| Domain Classification | Verify correct domain classification for each source | AI Team |
+| Verification Level | Confirm adherence to verification level annotations | Compliance Team |
+| Applicability Context | Validate applicability context for each source | Documentation Team |
+
+### 6.2 Audit Frequency
+
+Audits will be conducted at regular intervals to ensure compliance with the protocol. The audit frequency and criteria are as follows:
+
+| Interval | Criteria |
+|:---|:---|
+| Monthly | Random sampling of classified sources |
+| Quarterly | Comprehensive review of all sources |
+| Annually | Full protocol compliance audit |
+
+---
+
 # 🛰️ End of Protocol
