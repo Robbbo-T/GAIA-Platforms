@@ -1,3 +1,15 @@
+---
+title: "GAIA-GREENTECH"
+version: "1.0"
+status: "Active"
+author: "GAIA-Platforms Initiative"
+tags: [Green Technology, Sustainability, Modular Systems, Ethical AI, COAFI]
+last_updated: "2025-04-26"
+related_documents:
+  - "../GP-FD/ToC-GP-FD.md"
+  - "../GP-AM/ToC-GP-AM.md"
+---
+
 # GAIA-GREENTECH
 
 **GAIA-GREENTECH** is the division dedicated to clean technologies and energy systems driving environmental stewardship across all domains.
