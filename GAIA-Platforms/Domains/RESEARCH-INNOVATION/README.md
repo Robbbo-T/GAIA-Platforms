@@ -1,4 +1,4 @@
-# GAIA-Platforms – ASTRO-EXPLORATION Domain
+# GAIA-Platforms – RESEARCH-INMNOVATION Domain
 
 ## Introduction
 
