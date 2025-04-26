@@ -19,3 +19,17 @@ The purpose of the AEROSPACE domain is to provide a structured framework for the
 - [AMPEL360XWLRGA Aircraft Design Framework](../../GAIA-AIR/AMPEL360XWLRGA.md)
 - [ATA Detailed Breakdown for AMPEL360XWLRGA](../../GAIA-AIR/ATA-Detailed-Breakdown.md)
 - [ELPACK Tables (Engineering Logical Packets)](../../GAIA-AIR/ELPACK-Tables.md)
+
+## Subdomains
+
+### CIVIL
+
+The CIVIL subdomain focuses on the application of GAIA principles and technologies to non-military atmospheric flight, encompassing commercial aviation, general aviation, and related air traffic management systems and infrastructure.
+
+### SECURE_AERO
+
+The SECURE_AERO subdomain is dedicated to the development and implementation of secure aerospace systems, including cyber defense, post-quantum security, cryptography, and defensive systems technology.
+
+### INTERFACE
+
+The INTERFACE subdomain defines the connective structure that enables interoperability between atmospheric, orbital, terrestrial, and digital aerospace systems. It provides standardized architectures, secure data exchanges, and operational protocols necessary to seamlessly federate different aerospace modules across Earth and Space.

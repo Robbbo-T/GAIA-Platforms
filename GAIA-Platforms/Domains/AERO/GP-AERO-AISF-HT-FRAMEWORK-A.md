@@ -94,4 +94,3 @@ AISF-HT acts as a **pillar** for:
 * [GAIA Platforms Canonical Index](../../README.md)
 * [Domains Overview – AERO](../README.md)
 * [WorldWideWinner RE-GEN-AI.PROJECT Overview](../../../WorldWideWinner/README.md) (Coming Soon)
-

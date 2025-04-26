@@ -133,18 +133,4 @@ If the generated content has a natural extension potential, suggest:
 
 ---
 
-# 🛰️ End of Protocol     ---
-title: "GAIA Platforms – Semantic Source Classification Protocol"
-document_id: GP-DOCS-0002-PROTOCOL-A
-version: v1.0
-status: ACTIVE
-author: GAIA Platforms Initiative
-date: 2025-04-26
-tags:
-  - COAFI
-  - Documentation
-  - Source Validation
-  - Classification
-  - LUII-002
----
-
+# 🛰️ End of Protocol

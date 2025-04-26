@@ -150,4 +150,3 @@ flowchart TD
 - Expandable by Domain ➔ Atmospheric | Interplanetary | Environmental | Cross-Domain
 - Modular linking ➔ Repositories, Programs, Frameworks
 - COAFI-aligned ➔ Canonical structuring and document referential system
-
