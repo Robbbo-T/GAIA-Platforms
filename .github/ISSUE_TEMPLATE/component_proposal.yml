@@ -1,0 +1,60 @@
+name: New Component Proposal
+description: Use this template to propose a new component aligned with COATFI standards.
+labels: [component, proposal]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Component Proposal Template
+        Ensure consistent metadata and alignment with the GAIA COATFI standards.
+
+  - type: input
+    id: component-title
+    attributes:
+      label: Component Title
+      placeholder: e.g., Trans-critical CO₂ Pack
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gaia-domain
+    attributes:
+      label: GAIA Domain
+      options:
+        - GAIA-greentech
+        - GAIA-space
+        - GAIA-air
+    validations:
+      required: true
+
+  - type: dropdown
+    id: technology-category
+    attributes:
+      label: Technology Category
+      options:
+        - AI-ML
+        - ADV-MAT
+        - SUST-TECH
+        - DIG-TWIN
+        - IOT-SENS
+        - ENERGY
+    validations:
+      required: true
+
+  - type: textarea
+    id: metadata
+    attributes:
+      label: Component Metadata (YAML)
+      description: Include full YAML metadata schema here.
+      placeholder: |
+        UUID: [auto-generated]
+        DES-ID: [e.g., DES-2151-01]
+        ComponentType: [Type of component]
+        TechnologyReadinessLevel: [TRL-X]
+        CivilUseCase: [Description]
+        CommercialDerivatives: []
+        AdvancedDomain: [Domain]
+        SustainabilityMetrics: []
+        Tags: []
+    validations:
+      required: true
