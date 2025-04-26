@@ -1,4 +1,7 @@
 # Robbbo-T/GAIA-Platforms/Readme.md
+
+# Green Advanced Intelligent Architectures: GAIA Platforms.
+
 ## Introduction
 
 **GAIA-Platforms** is the unified environment orchestrating civil, atmospheric, interplanetary, and sustainable technology initiatives under the GAIA philosophy.  
