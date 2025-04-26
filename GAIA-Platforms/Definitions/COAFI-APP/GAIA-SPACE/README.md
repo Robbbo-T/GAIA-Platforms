@@ -1,4 +1,4 @@
-# GAIA-space – SD-COATFI-AEROSPACE Framework
+# GAIA-SPACE – SD-COATFI-AEROSPACE Framework
 
 **Space-Dedicated, Component-Oriented, Advanced-Technology-First Implementation**
 
