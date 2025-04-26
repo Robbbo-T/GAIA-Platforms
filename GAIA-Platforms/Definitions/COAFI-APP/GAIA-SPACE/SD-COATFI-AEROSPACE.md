@@ -1,4 +1,4 @@
-# SD-COATFI-AEROSPACE Framework
+# SD-COATFI-AEROSPACE 
 
 **Space-Dedicated, Component-Oriented, Advanced-Technology-First Implementation**
 
