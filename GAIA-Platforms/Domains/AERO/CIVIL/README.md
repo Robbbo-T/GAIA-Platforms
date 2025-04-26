@@ -50,6 +50,3 @@ We welcome contributions to the CIVIL domain. To contribute:
 
 *This README provides a high-level overview of the CIVIL domain. Please navigate to the relevant subdirectories for detailed project information and specifications.*
 
-
----
-

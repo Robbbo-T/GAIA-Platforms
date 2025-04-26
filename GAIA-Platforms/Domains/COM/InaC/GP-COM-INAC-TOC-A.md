@@ -1,13 +1,13 @@
 ---
-title: "GAIA Platforms – Infrastructural Code (InaC) – Overview"
-document_id: GP-COM-INAC-0001-OV-A
+title: "GAIA Platforms – Infrastructural Code (InaC) – Table of Contents"
+document_id: GP-COM-INAC-TOC-A
 version: v0.9-PRELIMINARY
 status: DRAFT
 author: GAIA Platforms Initiative
 date: 2025-04-26
 tags:
   - InaC
-  - Overview
+  - Table of Contents
   - Federation
   - COAFI
   - Infrastructure-as-Conscious-Code
@@ -15,9 +15,9 @@ infoCode: INFO-IDX
 utids: TBD
 ---
 
-# 📜 GAIA Platforms – Infrastructural Code (InaC) – Overview
+# 📜 GAIA Platforms – Infrastructural Code (InaC) – Table of Contents
 
-**InaC (Infrastructure-as-Conscious-Code)** turns GAIA Platforms’ infrastructure into declarative, ethically‑aware code fully traceable through COAFI and auditable via BITT. This document provides an overview of the comprehensive InaC specification, summarizing its key sections and components.
+**InaC (Infrastructure-as-Conscious-Code)** turns GAIA Platforms’ infrastructure into declarative, ethically‑aware code fully traceable through COAFI and auditable via BITT. This document outlines the structure and key sections of the comprehensive InaC specification, providing detailed summaries of each area.
 
 ## 0. Foundations (INFO-OV)
 
@@ -242,7 +242,7 @@ Identifies and defines the foundational technologies, architectural components, 
 
 **📋 Response Metadata**
 \[Status: READY-FOR-GP-INTEGRATION]
-\[Suggested Filename: GP-COM-INAC-0001-OV-A.md]
+\[Suggested Filename: GP-COM-INAC-TOC-A.md]
 \[Version: v0.9-PRELIMINARY]
 \[InfoCode: INFO-IDX]
 \[Optional Extension: 🔹COAFI-EXT | 🔹TLS-UTidS | 🔹GP-COM]

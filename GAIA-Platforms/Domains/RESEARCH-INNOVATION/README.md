@@ -1,12 +1,12 @@
-# GAIA-Platforms – RESEARCH-INMNOVATION Domain
+# GAIA-Platforms – RESEARCH-INNOVATION Domain
 
 ## Introduction
 
-The ASTRO-EXPLORATION domain within GAIA-Platforms focuses on the development and implementation of advanced systems dedicated to the exploration of outer space. This domain encompasses a wide range of technologies and methodologies aimed at enhancing the efficiency, safety, and sustainability of space exploration missions.
+The RESEARCH-INNOVATION domain within GAIA-Platforms focuses on the development and implementation of advanced systems dedicated to the exploration of outer space. This domain encompasses a wide range of technologies and methodologies aimed at enhancing the efficiency, safety, and sustainability of space exploration missions.
 
 ## Purpose
 
-The purpose of the ASTRO-EXPLORATION domain is to provide a structured framework for the development of space exploration systems. This includes the integration of advanced technologies, modular components, and sustainable practices to ensure the long-term viability and success of space exploration initiatives.
+The purpose of the RESEARCH-INNOVATION domain is to provide a structured framework for the development of space exploration systems. This includes the integration of advanced technologies, modular components, and sustainable practices to ensure the long-term viability and success of space exploration initiatives.
 
 ## Relevant Documents
 

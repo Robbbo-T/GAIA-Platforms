@@ -25,12 +25,12 @@ The scope of GP-COM includes, but is not limited to:
 * **/InaC**: Contains the specifications, core code, policies, and documentation for the **Infrastructure-as-Conscious-Code** framework.
     * `GP-COM-INAC-TOC-A.md`: The master Table of Contents for the InaC specification.
     * *(Other InaC specification documents)*
-* **/COAFI**: Documentation, APIs, and potentially core service implementation for the **Canonical Orchestrated Architecture File Index**.
 * **/BITT**: Details on the **Blockchain Integrated Traceability & Trust** implementation, including network configuration, smart contracts, and access protocols.
+* **/Ethics**: Implementation details and policies related to the operational **Digital Ethics** framework.
+* **/COAFI**: Documentation, APIs, and potentially core service implementation for the **Canonical Orchestrated Architecture File Index**.
 * **/Federation**: Specifications and components related to the **Federated Architecture** management.
 * **/Services**: Deployment configurations and documentation for shared platform services (AI/ML, Monitoring, Security, etc.).
 * **/Standards**: Definitions of communication protocols, API guidelines, and data format standards.
-* **/Ethics**: Implementation details and policies related to the operational **Digital Ethics** framework.
 
 ## Interaction with Other Domains
 
