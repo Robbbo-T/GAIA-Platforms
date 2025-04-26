@@ -1,15 +1,26 @@
 # GAIA-AIR – CD-COATFI-AERODCP Framework
 
-**Civil-Dedicated, Component-Oriented, Advanced-Technology-First Implementation**
+> **Civil-Dedicated, Component-Oriented, Advanced-Technology-First Implementation**
 
-A technology-first approach for aerospace design, focusing on civil aviation solutions and commercial spin-offs.
+A technology-first strategy for aerospace systems development, prioritizing **civil aviation innovation**, **modular sustainability**, and **commercial regenerative pathways** within the GAIA Platforms vision.
 
-## Core Documentation:
-- [see GAIA-AIR project details](https://github.com/Robbbo-T/Robbbo-T/blob/main/GAIA-AIR/CD-COATFI-AERODCP.md)
+---
 
-## Purpose:
-- Civil-first aerospace design and technology implementation.
-- Standardized modular aerospace components.
-- Clear pathways for commercial derivatives and sustainability.
+## 📂 Core Documentation
+- [CD-COATFI-AERODCP Specification](https://github.com/Robbbo-T/Robbbo-T/blob/main/GAIA-AIR/CD-COATFI-AERODCP.md)
 
+---
 
+## 🎯 Purpose
+
+- **Civil-Centric Design:** Architect aerospace platforms with civil aviation as the foundational domain.
+- **Modular Components:** Enable standardized, interoperable aerospace subsystems.
+- **Advanced-Technology Prioritization:** Integrate cutting-edge propulsion, energy, and information systems.
+- **Commercial Spin-Off Readiness:** Design pathways for commercial adaptation and scalability.
+- **Sustainability Alignment:** Ensure long-term environmental and informational sustainability across programs.
+
+---
+
+# 🧭 Navigation
+- [GAIA AIR Project Overview](../README.md)
+- [GAIA Platforms Canonical Index](../../GAIA-Platforms/README.md)
