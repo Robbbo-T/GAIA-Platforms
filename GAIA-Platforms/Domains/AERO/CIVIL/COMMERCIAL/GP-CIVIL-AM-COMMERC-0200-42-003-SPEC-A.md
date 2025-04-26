@@ -15,7 +15,7 @@ tags:
 infoCode: INFO-SPEC
 ---
 
-# 📜 GAIA Platforms – Civil Atmospheric Modules: Commercial Aircraft Integrated Avionics Specification
+#  GAIA Platforms – Civil Atmospheric Modules: Commercial Aircraft Integrated Avionics Specification
 
 ---
 
