@@ -1,6 +1,6 @@
 # GT-COATFI-GREENTECH Framework
 
-**Green Technology, Component-Oriented, Advanced-Technology-First Implementation**
+**Green, Component-Oriented, Advanced-Technology-First Implementation**
 
 A technology-first approach for green technology design, focusing on sustainable solutions and commercial spin-offs.
 
