@@ -1,4 +1,4 @@
-# GAIA-air – CD-COATFI-AERODCP Framework
+# GAIA-air/CD-COATFI-AERODCP Framework
 
 ## Civil-Dedicated, Component-Oriented, Advanced-Technology-First Implementation
 
