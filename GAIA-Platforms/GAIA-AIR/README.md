@@ -5,7 +5,7 @@
 A technology-first approach for aerospace design, focusing on civil aviation solutions and commercial spin-offs.
 
 ## Core Documentation:
-- [CD-COATFI-AERODCP Framework Definition](./CD-COATFI-AERODCP.md)
+- [GAIA-AIR/CD-COATFI-AERODCP.md](./CD-COATFI-AERODCP.md)
 
 ## Purpose:
 - Civil-first aerospace design and technology implementation.
