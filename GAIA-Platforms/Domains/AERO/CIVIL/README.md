@@ -22,7 +22,7 @@ The scope includes:
 
 This directory is structured to house specific projects and specifications related to different aspects of civil aviation:
 
-* **/COMMERCIAL**: Focuses on systems and specifications for commercial air transport (e.g., `GP-CIVIL-AM-COMMERC-0200-42-003-SPEC-A.md` for integrated avionics).
+* **/COMMERCIAL**: Focuses on systems and specifications for commercial air transport (e.g., [`GP-CIVIL-AM-COMMERC-0200-42-003-SPEC-A.md`](./COMMERCIAL/GP-CIVIL-AM-COMMERC-0200-42-003-SPEC-A.md) for integrated avionics).
 * **/ATM**: Specifications related to Air Traffic Management interfaces and integration.
 * **/SUSTAINABILITY**: Projects and research focused specifically on sustainable aviation fuels, electric/hybrid propulsion integration, and operational efficiency improvements within the civil context.
 * **/SAFETY_CERTIFICATION**: Documentation and processes related to meeting civil airworthiness and safety standards.
@@ -45,6 +45,11 @@ We welcome contributions to the CIVIL domain. To contribute:
 * Follow the GAIA Platforms' standard Git workflow: fork the repository, create a clear feature branch, and submit pull requests with comprehensive descriptions.
 * Engage actively through issue trackers and discussions to ensure alignment on technical standards, aviation regulations, and best practices.
 * For questions, detailed collaboration, or specific domain insights, contact the CIVIL domain maintainers or utilize the official GAIA Platforms communication channels outlined in the main README.
+
+---
+
+*This README provides a high-level overview of the CIVIL domain. Please navigate to the relevant subdirectories for detailed project information and specifications.*
+
 
 ---
 
