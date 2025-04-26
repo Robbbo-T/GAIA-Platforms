@@ -14,6 +14,6 @@ This framework emphasizes a technology-first approach tailored specifically for 
 
   1) GAIA AIR
   2) GAIA-SPACE
-  3) GAYA-GREENTECH
+  3) GAIA-GREENTECH
 
 For comprehensive technical specifications and implementation details, visit the [CD-COATFI-AERODCP.md](./CD-COATFI-AERODCP.md).
