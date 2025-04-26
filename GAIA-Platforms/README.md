@@ -1,3 +1,15 @@
+---
+title: "GAIA-Platforms"
+version: "1.0"
+status: "Active"
+author: "GAIA-Platforms Initiative"
+tags: [Aerospace, Sustainability, Modular Systems, Ethical AI, COAFI]
+last_updated: "2025-04-26"
+related_documents:
+  - "../GP-FD/ToC-GP-FD.md"
+  - "../GP-AM/ToC-GP-AM.md"
+---
+
 # GAIA-Platforms
 
 ## Introduction
