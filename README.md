@@ -1,14 +1,12 @@
-Here’s a clear and actionable next-step summary tailored specifically to your repository and project goals:
 
-⸻
 
 ✅ Ready-to-Commit File Placement
 
 Commit each file to its exact path as structured:
 
-/GAIA-Platforms/Definitions/COAFI-APP/GAIA-greentech/GT-COATFI-GREENTECH.md
-/GAIA-Platforms/Definitions/COAFI-APP/GAIA-space/SD-COATFI-AEROSPACE.md
-/GAIA-Platforms/Definitions/COAFI-APP/GAIA-air/CD-COATFI-AERODCP.md
+/GAIA-Platforms/Definitions/COAFI-APP/GAIA-GREENTECH/GT-COATFI-GREENTECH.md
+/GAIA-Platforms/Definitions/COAFI-APP/GAIA-SPACE/SD-COATFI-AEROSPACE.md
+/GAIA-Platforms/Definitions/COAFI-APP/GAIA-AIR/CD-COATFI-AERODCP.md
 
 
 
@@ -20,7 +18,7 @@ Create a concise README.md within each subfolder to provide an accessible overvi
 
 Example: /GAIA-Platforms/Definitions/COAFI-APP/GAIA-air/README.md
 
-# GAIA-air – CD-COATFI-AERODCP Framework
+# GAIA-AIR – CD-COATFI-AERODCP Framework
 
 **Civil-Dedicated, Component-Oriented, Advanced-Technology-First Implementation**
 
