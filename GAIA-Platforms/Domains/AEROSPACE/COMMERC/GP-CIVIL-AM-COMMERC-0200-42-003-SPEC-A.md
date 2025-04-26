@@ -69,7 +69,7 @@ Define the modular, federated architecture and key functional specifications for
 
 ## 5  Architectural Overview
 
-![Architectural Diagram](file:///C:/Users/APELLICC/Downloads/mermaid-ai-diagram-2025-04-26-171953.svg)
+![Architectural Diagram](GAIA-Platforms/Domains/AEROSPACE/COMMERC/mermaid-ai-diagram-2025-04-26-171953.svg)
 
 ---
 
