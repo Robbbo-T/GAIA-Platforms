@@ -111,11 +111,23 @@ Federated Ethical Execution (AMEDEO Compliance)
 
 ---
 
+## 9. Key Enabling Capabilities within InaC
+
+The GAIA AIR Infranet as Infrastructural Code (InaC) is built upon foundational technical and ethical capabilities that ensure operational excellence, security, and planetary-scale federated collaboration.
+
+| Capability | Description |
+|:---|:---|
+| **High Performance Computing (HPC)** | Distributed and federated HPC clusters for real-time control, optimization, simulation, and decision making. |
+| **Fast Communications** | Secure, quantum-resilient, low-latency communications across Earth, Atmospheric, and Orbital assets. |
+| **Cybersecurity** | Multi-layered security architecture embedding BITT blockchain traceability, compliance with DO-326A/356A, and ethical validation through AMEDEO. |
+| **Policies and Regulations** | Alignment with global aerospace, digital, and environmental regulatory frameworks, combined with internal federated GAIA protocols. |
+| **Code of Conduct and Protocols** | Ethical operational frameworks anchored in PET-CORE doctrines and AMEDEO certification layers. |
+| **API Infrastructure** | Modular, open, secure API ecosystems connecting atmospheric, ground, orbital, and digital layers under federated orchestration. |
+
+---
+
 # 📋 Response Metadata
 
 ```plaintext
 [Status: READY-FOR-GP-INTEGRATION]
-[Suggested Filename: GP-COM-INAC-0001-OV-A.md]
-[Version: v0.9-PRELIMINARY]
-[InfoCode: INFO-OV]
-[Optional Extension: 🔹COAFI-EXT | 🔹TLS-UTidS | 🔹GP-AM | 🔹GP-ATS]
+[Suggested Filename: GP-COM-INAC-0001-OV
