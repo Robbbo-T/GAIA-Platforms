@@ -396,12 +396,6 @@ graph TD
 
 ## Part 0: Program Foundations (GP-FD) 🏛️
 
-*(Based on GP-FD sections)*
-
-*Purpose: Foundational framework encompassing vision, theories, standards, ethics, and overall program governance.*
-
-*Filename pattern*: `GP-FD-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: Part 0 documents typically don't include PlatformCode/SeqCode unless tied to a specific program baseline, e.g., `GP-FD-GEN-0000-00-001-OV-A.md`. For simplicity in this index, we omit the `-[PlatformCode]-[SeqCode]` placeholder in filenames unless necessary.)*
 
 ### Chapter Index (Part 0)
 
@@ -545,12 +539,6 @@ graph TD
 
 ## Part 1: Air Systems & Airframes (GP-AM) 🚀✈️
 
-*(Based on ToC-GP-AM.md)*
-
-*Purpose: Airframe Design, System & Ops Manuals for AMPEL platforms.*
-
-*Filename pattern*: `GP-AM-[PlatformCode]-[SeqCode]-[ATAChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Asterisk `*` denotes a specific PlatformCode-SeqCode combination, e.g., `AMPEL-0100` for this baseline)*
 
 ### Chapter Index (Part 1)
 
@@ -650,12 +638,6 @@ graph TD
 
 ## Part II: Space Systems & Spaceframes (GP-AS) 🛰️🌌
 
-*(Based on ToC-GP-AS.md)*
-
-*Purpose: Spaceframe Design, System & Ops Manuals for AMPEL+ platforms.*
-
-*Filename pattern*: `GP-AS-[PlatformCode]-[SeqCode]-[ASChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Asterisk `*` denotes `AMPELPLUS-0200` for this example)*
 
 ### AS Chapter Index (Part 2)
 
@@ -763,12 +745,6 @@ graph TD
 
 ## Part III: GP-COM · Core Operating Matrix (Common Systems) 💻🔗🔒
 
-*(Based on ToC-GP-COM.md)*
-
-*Scope:* **Shared Digital Infrastructure** — AI Core (*i‑Aher0*), Quantum Orchestration (*QAO*), Cyber‑security, Blockchain (*BITT*), AMPEL Core Systems and Networks.
-
-*Filename pattern*: `GP-COM-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-COM, SeqCode is typically the baseline like `0300`)*
 
 ### Chapter Index (Part 3)
 
@@ -798,12 +774,6 @@ graph TD
 
 ## Part IV: Ground Infrastructure & Automation (GP-GRO) 🏗️⛽
 
-*(Based on ToC-GP-GRO.md)*
-
-*Purpose: Ground Support & Automation Manuals*
-
-*Filename pattern*: `GP-GRO-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-GRO, SeqCode is typically the baseline like `0400`)*
 
 ### Chapter Index (Part 4)
 
@@ -830,12 +800,6 @@ graph TD
 
 ## Part V: Supply Chain & Ethical Logistics (GP-SUPL) 📦🌿
 
-*(Based on ToC-GP-SUPL.md)*
-
-*Purpose: Supply Chain & Logistics Manuals*
-
-*Filename pattern*: `GP-SUPL-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-SUPL, SeqCode is typically the baseline like `0500`)*
 
 ### Chapter Index (Part 5)
 
@@ -860,12 +824,6 @@ graph TD
 
 ## Part VI: Robotic Assembly & Maintenance (GP-RAME) 🛠️🤖
 
-*(Based on ToC-GP-RAME.md)*
-
-*Purpose: Robotic Systems Design & Ops Manuals*
-
-*Filename pattern*: `GP-RAME-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-RAME, SeqCode is typically the baseline like `0600`)*
 
 ### Chapter Index (Part 6)
 
@@ -898,38 +856,6 @@ graph TD
 
 ## Part VII: Aerial Drones (AI-Piloted Drones) (GP-ADR) 🚁🤖
 
-*(Based on GP-ADR sections)*
-
-*Purpose: Design, System & Ops Manuals for AI-Piloted Drone platforms.*
-
-*Filename pattern*: `GP-ADR-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Asterisk `*` denotes a specific PlatformCode-SeqCode combination, e.g., `ADR-VTOL-0700` for this baseline)*
-
-### Sub-Domain Legend (Part 7)
-
-| Code | Icon | Badge | Element Title                    | Short description                              |
-|------|:---:|:-----:|----------------------------------|------------------------------------------------|
-| **PLT** | 🚁 | indigo | Drone Platforms                  | VTOL, fixed-wing, tilt-rotor, hybrid airframes |
-| **AUT** | 🤖 | purple | Autonomy & Control               | Autopilot, guidance, path-planning, AI stack   |
-| **LINK**| 📡 | sky | Communications & Datalink        | RF, 4G/5G, SAT-COM, mesh networks              |
-| **PAY** | 📷 | orange | Payload Systems                  | EO/IR cameras, LiDAR, sprayers, delivery pods  |
-| **GCS** | 🖥️ | teal | Ground Control Stations          | Operator UI, antennas, datacentres             |
-| **SWM** | 🐝 | yellow | Swarm Coordination               | Multi-UAV co-op, dynamic tasking               |
-| **SEC** | 🔒 | red | Security & Compliance            | Cyber-security, regulatory, C2 encryption      |
-| **LOGI**| 📦 | brown | Logistics & Support              | Battery swapping, field tooling, spares        |
-
-### Sub-Domain ➜ InfoCode Matrix (Cheat-Sheet - Part 7)
-
-| Code | IDX root            | Arch/OV     | Req/Policy  | Interfaces/Data | Ops/Procedures |
-|------|---------------------|-------------|-------------|-----------------|----------------|
-| **PLT** | `PLT-01-000-IDX`    | OV, DD      | SPEC        | ICD, DWG        | PROC, TEST     |
-| **AUT** | `AUT-02-000-IDX`    | OV, SDD     | SPEC, REQ   | ICD, CAL        | PROC, TEST     |
-| **LINK**| `LINK-03-000-IDX`   | OV, SDD     | SPEC        | ICD, FIG        | PROC, TEST     |
-| **PAY** | `PAY-04-000-IDX`    | OV          | SPEC        | ICD             | PROC           |
-| **GCS** | `GCS-05-000-IDX`    | OV, SDD     | PLAN, SPEC  | ICD, FIG        | PROC, TEST     |
-| **SWM** | `SWM-06-000-IDX`    | OV, SDD     | SPEC, CAL   | ICD             | PROC           |
-| **SEC** | `SEC-07-000-IDX`    | OV, SDD     | PLAN, REQ   | ICD, SPEC       | PROC, TEST     |
-| **LOGI**| `LOGI-08-000-IDX`   | OV          | PLAN, LIST  | REF             | PROC           |
 
 ### Chapter Index (Part 7)
 
@@ -976,40 +902,6 @@ graph TD
 
 ## Part VIII: Flying City Cars (Family Vehicles) (GP-FF-CITY) 🚖🌆
 
-*(Based on GP-FF-CITY sections)*
-
-*Purpose: Design, System & Ops Manuals for Urban Air Mobility (UAM) platforms.*
-
-*Filename pattern*: `GP-FF-CITY-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-FF-CITY, SeqCode is typically the baseline like `0800`)*
-
-### Sub-Domain Legend (Part 8)
-
-| Code | Icon | Badge | Element Title             | Short description                          |
-|------|:---:|:-----:|---------------------------|--------------------------------------------|
-| **PLT** | 🚖 | magenta | UAM Platforms             | eVTOL, lift-plus-cruise, tilt-rotor cars   |
-| **AUT** | 🤖 | purple | Autonomy & Flight Control | Autopilot, sense-&-avoid, AI stack         |
-| **PROP**| ⚡ | yellow | Propulsion & Power        | Electric rotors, hybrid gensets, batteries |
-| **CAB** | 🛋️ | green | Passenger Cabin Systems   | Seating, HMI, ECS, infotainment            |
-| **LINK**| 📡 | sky | Comms & Datalink          | 5G/6G, C-Band, sat relay, mesh             |
-| **UTM** | 🗺️ | teal | Urban Traffic Mgmt        | U-space corridors, digital twin, ADS-B In|
-| **SEC** | 🔒 | red | Safety & Security         | Certification, cybersecurity, remote ID    |
-| **INFRA**| 🏢 | orange | Vertiport Infrastructure  | Pads, chargers, passenger flow             |
-| **LOGI**| 📦 | brown | Logistics & MRO           | Battery swap, spares, field support        |
-
-### Sub-Domain ➜ InfoCode Matrix (Cheat-Sheet - Part 8)
-
-| Code | IDX root             | Arch/OV     | Req/Policy | Interfaces/Data | Ops/Procedures |
-|------|----------------------|-------------|------------|-----------------|----------------|
-| **PLT** | `PLT-01-000-IDX`     | OV, DD      | SPEC       | ICD, DWG        | PROC, TEST     |
-| **AUT** | `AUT-02-000-IDX`     | OV, SDD     | SPEC, REQ  | ICD, CAL        | PROC, TEST     |
-| **PROP**| `PROP-03-000-IDX`    | OV, SDD     | SPEC       | ICD, FIG        | PROC, TEST     |
-| **CAB** | `CAB-04-000-IDX`     | OV, SDD     | SPEC       | ICD             | PROC           |
-| **LINK**| `LINK-05-000-IDX`    | OV, SDD     | SPEC       | ICD, FIG        | PROC, TEST     |
-| **UTM** | `UTM-06-000-IDX`     | OV, SDD     | SPEC, PLAN | ICD, LIST       | PROC           |
-| **SEC** | `SEC-07-000-IDX`     | OV, SDD     | PLAN, REQ  | ICD, SPEC       | PROC, TEST     |
-| **INFRA**| `INFRA-08-000-IDX`   | OV          | PLAN, SPEC | FIG, REF        | PROC           |
-| **LOGI**| `LOGI-09-000-IDX`    | OV          | PLAN, LIST | REF             | PROC           |
 
 ### Chapter Index (Part 8)
 
@@ -1058,48 +950,6 @@ graph TD
 
 ## Part IX: Space Satellites & Probes (GP-SPACE-SAPR) 🛰️🔬
 
-*(Based on GP-SPACE-SAPR sections)*
-
-*Purpose: Design, System & Ops Manuals for Satellites and Probe platforms.*
-
-*Filename pattern*: `GP-SPACE-SAPR-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Asterisk `*` denotes a specific PlatformCode-SeqCode combination, e.g., `SAPR-LEO-COMMS-0900` for this baseline)*
-
-### Sub-Domain Legend (Part 9)
-
-| Code | Icon | Badge | Element Title             | Short description                               |
-|------|:---:|:-----:|---------------------------|-------------------------------------------------|
-| **BUS** | 🛰️ | gray | Spacecraft Bus            | Structure, thermal, harness, ADCS base          |
-| **PAY** | 🔬 | violet | Payload Instruments       | Optics, radar, science sensors                  |
-| **COMM**| 📡 | sky | Communications & TT&C     | X-/Ka-band, optical, ranging                    |
-| **PROP**| 🚀 | yellow | Propulsion & ΔV           | Chemical, electric, cold-gas, quantum           |
-| **GNC** | 🎯 | teal | Guidance & Control        | ADCS, nav sensors, autonomy algos               |
-| **POWER**| ⚡ | orange | Electrical Power Subsystem| Solar array, battery, PCDU                      |
-| **THERM**| 🌡️ | brown | Thermal Control           | Radiators, MLI, heaters, cryo                   |
-| **STRUC**| 🏗️ | silver | Structures & Mechanisms   | Panels, booms, deployables                      |
-| **GDS** | 🖥️ | green | Ground Data System        | MOC, flight software tools                      |
-| **MISSION**| 📅 | lime | Mission Ops & Planning    | ConOps, timelines, procedures                   |
-| **SEC** | 🔒 | red | Security & Reliability    | Cyber, FDIR, radiation hardening                |
-| **INFRA**| 🚚 | indigo | Launch & Ops Infrastructure | Integration, transport, launch pad                |
-| **LOGI**| 📦 | amber | Logistics & MRO           | Spares, return, refurbishment                   |
-
-### Sub-Domain ➜ InfoCode Matrix (Cheat-Sheet - Part 9)
-
-| Code | IDX root             | Arch/OV     | Req/Policy  | Interfaces/Data | Ops/Procedures |
-|------|----------------------|-------------|-------------|-----------------|----------------|
-| **BUS** | `BUS-01-000-IDX`     | OV, DD      | SPEC        | ICD, DWG        | PROC, TEST     |
-| **PAY** | `PAY-02-000-IDX`     | OV, SDD     | SPEC, REQ   | ICD, CAL        | PROC, TEST     |
-| **COMM**| `COMM-03-000-IDX`    | OV, SDD     | SPEC        | ICD, FIG        | PROC, TEST     |
-| **PROP**| `PROP-04-000-IDX`    | OV, SDD     | SPEC        | ICD, CAL        | PROC, TEST     |
-| **GNC** | `GNC-05-000-IDX`     | OV, SDD     | SPEC, REQ   | ICD, CAL        | PROC, TEST     |
-| **POWER**| `POWER-06-000-IDX`   | OV, SDD     | SPEC        | ICD, FIG        | PROC           |
-| **THERM**| `THERM-07-000-IDX`   | OV, SDD     | SPEC        | FIG             | PROC           |
-| **STRUC**| `STRUC-08-000-IDX`   | OV, DD      | SPEC        | DWG             | PROC           |
-| **GDS** | `GDS-09-000-IDX`     | OV, SDD     | PLAN, REQ   | JSON, ICD       | PROC           |
-| **MISSION**| `MISSION-10-000-IDX` | OV, PLAN    | REQ         | REF             | PROC           |
-| **SEC** | `SEC-11-000-IDX`     | OV, SDD     | PLAN, REQ   | ICD, SPEC       | PROC, TEST     |
-| **INFRA**| `INFRA-12-000-IDX`   | OV          | PLAN, SPEC  | REF, FIG        | PROC           |
-| **LOGI**| `LOGI-13-000-IDX`    | OV          | PLAN, LIST  | REF             | PROC           |
 
 ### Chapter Index (Part 9)
 
@@ -1151,47 +1001,6 @@ graph TD
 
 ## Part X: Program Management & Operations (GP-PMO) 🗓️🔒
 
-*(Based on GP-PMO sections)*
-
-*Purpose: Framework encompassing Program Management, Quality, Risk, and cross-domain operational standards.*
-
-*Filename pattern*: `GP-PMO-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-PMO, SeqCode is typically the baseline like `0500` from the original GP-PM example)*
-
-### Sub-Domain Legend (Part 10)
-
-| Code | Icon | Badge | Element Title             | Short description                              |
-|------|:---:|:-----:|---------------------------|------------------------------------------------|
-| **GOV** | 🏛️ | blue | Governance & Strategy     | Charters, org structures, policy sets          |
-| **PLAN**| 🗓️ | teal | Planning & Scheduling     | IMS, milestones, WBS integration               |
-| **RISK**| ⚠️ | red | Risk Management           | Hazard registers, mitigations, bow-ties        |
-| **QA** | 🔍 | green | Quality Assurance         | Process audits, process controls, KPIs         | *(Corrected description)*
-| **CERT**| 📜 | purple | Certification & Compliance| Authorities, standards, air/space-worthiness  |
-| **CONFIG**| 🗂️ | gray | Configuration Management  | Baselines, change boards, digital thread       |
-| **COST**| 💰 | amber | Cost & Resource Mgmt      | Budgets, EVM, staffing forecasts, supply plan  | *(Corrected description)*
-| **OPS** | 📋 | lime | Operations & SOPs         | Day-to-day ops manuals, playbooks              |
-| **COMM**| 🗣️ | sky | Reviews & Communication   | Design reviews, gate boards, comms plan        |
-| **DATA**| 🗄️ | indigo | Documentation & Records   | DMS structure, traceability, archives        | *(Corrected description)*
-| **GTM** | 🧭 | gold | Go-To-Market Strategy     | Unified GTM ops, ecosystem orchestration       | *(Added)*
-
-### Sub-Domain ➜ InfoCode Matrix (Cheat-Sheet - Part 10)
-
-| Code | IDX root            | Arch/OV     | Req/Policy  | Interfaces/Data | Ops/Procedures |
-|------|---------------------|-------------|-------------|-----------------|----------------|
-| **GOV** | `GOV-01-000-IDX`    | OV          | PLAN        | REF             | PROC           |
-| **PLAN**| `PLAN-02-000-IDX`   | OV          | PLAN        | LIST, WBS       | PROC           |
-| **RISK**| `RISK-03-000-IDX`   | OV          | PLAN, REQ   | JSON            | PROC, CAL      |
-| **QA** | `QA-04-000-IDX`     | OV          | PLAN, SPEC  | LIST            | PROC, TEST     |
-| **CERT**| `CERT-05-000-IDX`   | OV          | PLAN, REQ   | ICD, SPEC       | PROC           |
-| **CONFIG**| `CONFIG-06-000-IDX` | OV          | PLAN        | ICD, LIST       | PROC           |
-| **COST**| `COST-07-000-IDX`   | OV          | PLAN, REQ   | FIG, RPT        | PROC           |
-| **OPS** | `OPS-08-000-IDX`    | OV          | REQ         | REF, LIST       | PROC           |
-| **COMM**| `COMM-09-000-IDX`   | OV          | PLAN        | REF             | PROC           |
-| **DATA**| `DATA-10-000-IDX`   | OV          | PLAN        | JSON            | PROC           | *(Includes GTM)*
-| **QA** | `QA-11-000-IDX`     | OV          | PLAN        | SPEC            | PROC, TEST     | *(Safety/Env Mgmt)*
-| **QA** | `QA-12-000-IDX`     | OV          | PLAN, SPEC  | CERT            | PROC           | *(Training/Competency)*
-| **DATA**| `DATA-90-000-IDX`   | OV          | PLAN, SPEC  | FIG, RPT        | PROC           | *(Metrics/Dashboards)*
-| **SPECIAL**| `SPECIAL-99-000-IDX`| OV          | PLAN, RES   | REF             | CAL            | *(Special/Emerging Ops)*
 
 ### Chapter Index (Part 10)
 
@@ -1214,175 +1023,6 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Ops Tech       | `GP-PMO-*-99-000-IDX-A.md`   | [Details](#chapter-99-special--emerging-ops-tech-gp-pmo) |
 | *(Note: Appendices follow chapter 99)* |
 
----
-
-<details>
-<summary>### 00: General - GENERAL</summary>
-
-*Directory: `./GP-PMO/00-GENERAL/`*
-*Focus: Vision, governance framework, stakeholder map.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 01: Governance & Organization - GOV</summary>
-
-*Directory: `./GP-PMO/01-GOV/`*
-*Focus: Org chart, RACI, decision rights.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 02: Planning & Scheduling - PLAN</summary>
-
-*Directory: `./GP-PMO/02-PLAN/`*
-*Focus: IMS, WBS, baseline management.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 03: Risk Management - RISK</summary>
-
-*Directory: `./GP-PMO/03-RISK/`*
-*Focus: Hazard log, risk matrix, bow-tie analysis.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 04: Quality Assurance - QA</summary>
-
-*Directory: `./GP-PMO/04-QA/`*
-*Focus: Process audits, KPIs, continuous improvement.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 05: Certification & Compliance - CERT</summary>
-
-*Directory: `./GP-PMO/05-CERT/`*
-*Focus: Regulatory basis, certification plans, evidence.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 06: Configuration Management - CONFIG</summary>
-
-*Directory: `./GP-PMO/06-CONFIG/`*
-*Focus: Baselines, change boards, digital thread.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 07: Cost & Resource Mgmt - COST</summary>
-
-*Directory: `./GP-PMO/07-COST/`*
-*Focus: Budgets, EVM, staffing forecasts.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 08: Operations & SOPs - OPS</summary>
-
-*Directory: `./GP-PMO/08-OPS/`*
-*Focus: Daily ops manuals, playbooks, hand-over plans.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 09: Reviews & Gates - COMM</summary>
-
-*Directory: `./GP-PMO/09-COMM/`*
-*Focus: SRR, PDR, CDR, ORR, FRR, post-flight review.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 10: Documentation, Records & GTM - DATA / GTM</summary> *(Updated Title)*
-
-*Directory: `./GP-PMO/10-DATA/`* (Could contain a `GTM` sub-directory)
-*Focus: DMS structure, metadata, traceability, archive governance AND GTM strategy/execution.*
-
-*   [GP-PMO-GTM-0500-10-000-IDX-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-000-IDX-A.md): 10-000: Index to GTM documentation *(Example GTM Index)*
-*   [GP-PMO-GTM-0500-10-001-OV-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-001-OV-A.md): 10-001: Unified GTM Strategy Overview - *(OV)*
-*   [GP-PMO-GTM-0500-10-002-PLAN-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-002-PLAN-A.md): 10-002: Operationalization Plan - *(PLAN)*
-*   [GP-PMO-GTM-0500-10-003-ICD-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-003-ICD-A.md): 10-003: Ecosystem Interface Map - *(ICD)*
-*   [GP-PMO-GTM-0500-10-004-SPEC-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-004-SPEC-A.md): 10-004: Deal Shaping Specifications - *(SPEC)*
-*   [GP-PMO-GTM-0500-10-005-PROC-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-005-PROC-A.md): 10-005: Leadership Coordination Procedure - *(PROC)*
-*   [GP-PMO-GTM-0500-10-006-RPT-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-006-RPT-A.md): 10-006: Pulse & Performance Report - *(RPT)*
-*   [GP-PMO-GTM-0500-10-007-LIST-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-007-LIST-A.md): 10-007: Strategic Initiative List - *(LIST)*
-*   [GP-PMO-GTM-0500-10-008-REF-A.md](./GP-PMO/10-DATA/GTM/GP-PMO-GTM-0500-10-008-REF-A.md): 10-008: External Framework Alignment - *(REF)*
-*   *(Other standard DATA documents for DMS, records, etc., would also reside here)*
-
-</details>
-
-<details>
-<summary>### 11: Safety & Environmental Mgmt - QA</summary>
-
-*Directory: `./GP-PMO/11-QA/`*
-*Focus: SMS, ESG metrics, environmental permits.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 12: Training & Competency - QA</summary>
-
-*Directory: `./GP-PMO/12-QA/`*
-*Focus: Training matrices, cert records, LMS.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 90: Metrics & Dashboards - DATA</summary>
-
-*Directory: `./GP-PMO/90-DATA/`*
-*Focus: KPI dashboards, BI integration, AI insights.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
-<details>
-<summary>### 99: Special / Emerging Ops Tech - SPECIAL</summary>
-
-*Directory: `./GP-PMO/99-SPECIAL/`*
-*Focus: Digital twins for PM, quantum scheduling.*
-
-*   *(Placeholder for documents)*
-
-</details>
-
----
-
-## Appendix (Part 10)
-
-*(Note: Appendices follow chapter 99)*
-
-*   **(Placeholder: `GP-PMO-GEN-0500-APP-A-001-GLO-A.md`)**: Glossary of Program Management & Operations Terms & Acronyms - *(GLO)*
-*   **(Placeholder: `GP-PMO-GEN-0500-APP-B-001-REF-A.md`)**: Referenced COAFI Documents (Part 10) - *(REF, LIST)*
 
 ---
 
