@@ -66,7 +66,27 @@ dirs_to_create = [
     "GAIA-AIR",
     "GAIA-GREENTECH",
     "GAIA-SPACE",
-    "WorldWideWinner"
+    "WorldWideWinner",
+    "DOCS/COAFI-TOC-0001-OV-A",
+    "DOCS/COAFI-FOUND-0001-OV-A",
+    "DOCS/COAFI-FOUND-0002-PRINC-A",
+    "DOCS/COAFI-FOUND-0003-FED-A",
+    "Engine/Event_Handlers",
+    "Engine/Orchestration_Core",
+    "Schema",
+    "Registries",
+    "Registries/AERO",
+    "Registries/SPACE",
+    "Registries/COM",
+    "Registries/GROUND",
+    "Registries/GREENTECH",
+    "Workflows/Process_Definitions",
+    "Policies",
+    "Interfaces/API_Definitions",
+    "Interfaces/Adapters",
+    "Tooling/Document_Templates",
+    "Tooling/Script_Generators",
+    "Tooling"
 ]
 
 # Function to create directories and placeholder READMEs
