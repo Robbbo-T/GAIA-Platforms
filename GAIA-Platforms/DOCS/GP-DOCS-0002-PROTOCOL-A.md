@@ -11,13 +11,19 @@ tags:
   - Source Validation
   - Classification
   - LUII-002
+  - Requirements Management
+  - Design Traceability
+  - AS9100
+  - ISO 14001
+  - EASA CS-25
+  - S1000D BREX
 ---
 
 # 📜 GAIA Platforms – Semantic Source Classification Protocol
 
 ## 1. Purpose
 
-This protocol establishes the mandatory classification system for all external and internal digital sources referenced within GAIA Platforms, ensuring rigorous separation between verified, speculative, and creative materials to maintain document integrity, auditability, and ethical compliance.
+This protocol establishes the mandatory classification system for all external and internal digital sources referenced within GAIA Platforms, ensuring rigorous separation between verified, speculative, and creative materials to maintain document integrity, auditability, and ethical compliance. It also includes comprehensive requirements management and design traceability in accordance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ---
 

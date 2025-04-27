@@ -26,6 +26,7 @@ This directory is structured to house specific projects and specifications relat
 * **/ATM**: Specifications related to Air Traffic Management interfaces and integration.
 * **/SUSTAINABILITY**: Projects and research focused specifically on sustainable aviation fuels, electric/hybrid propulsion integration, and operational efficiency improvements within the civil context.
 * **/SAFETY_CERTIFICATION**: Documentation and processes related to meeting civil airworthiness and safety standards.
+* **/REQUIREMENTS_MANAGEMENT**: Detailed instructions for requirements management and design traceability, including metadata and version control system for requirements.
 
 ## Core Principles Alignment
 
@@ -36,6 +37,7 @@ The GAIA-AIR division adheres strictly to the overarching GAIA Platforms princip
 * **Efficiency:** Optimizing flight operations, maintenance schedules, and resource utilization through data integration and AI.
 * **Traceability & Compliance:** Full integration with COAFI for documentation management and BITT for auditable compliance records.
 * **Federation:** Ensuring seamless interoperability with other GAIA domains (GP-COM, GP-SUPL, GP-GRO) and external aviation stakeholders.
+* **Requirements Management and Design Traceability:** Establishing comprehensive requirements management and design traceability in accordance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ## Contribution & Development
 

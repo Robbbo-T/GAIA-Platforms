@@ -11,6 +11,10 @@ tags:
   - Federation
   - Ethics
   - Traceability
+  - Requirements Management
+  - Design Traceability
+  - Environmental Integration
+  - Compliance Mapping
 infoCode: INFO-PRINC
 utids: TBD
 ---
@@ -54,6 +58,14 @@ COAFI is designed with sustainability in mind, ensuring that its operations and 
 ### 7. Continuous Improvement
 
 COAFI is committed to continuous improvement, regularly reviewing and updating its processes, standards, and guidelines to ensure that it remains effective and relevant. This principle fosters a culture of innovation and adaptability within the GAIA Platforms initiative.
+
+### 8. Requirements Management and Design Traceability
+
+COAFI includes comprehensive requirements management and design traceability in accordance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX. This principle ensures that all requirements are properly identified, controlled, and traceable throughout the project lifecycle.
+
+### 9. Environmental Integration and Compliance Mapping
+
+COAFI integrates environmental considerations and compliance mapping into its operations. This principle ensures that environmental impacts are identified, tracked, and aligned with ISO 14001 and other relevant standards, promoting sustainable practices and regulatory compliance.
 
 ## Conclusion
 
