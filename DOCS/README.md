@@ -616,14 +616,6 @@ graph TD
 
 ---
 
-*(Appendices and detailed chapter `<details>` sections follow the same pattern as Part 0, referencing the documents listed in ToC-GP-AS.md...)*
-
----
-
-[**Link to Part III Detailed ToC**](#part-iii-gp-com--core-operating-matrix-common-systems-%f0%9f%92%bb%f0%9f%93%8d%f0%9f%94%92)
-
----
-
 ## Part III: GP-COM · Core Operating Matrix (Common Systems) 💻🔗🔒
 
 
@@ -643,13 +635,6 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Tech (COM)            | `GP-COM-SPECIAL-0300-99-000-IDX-A.md` | [Details](#chapter-99-special--emerging-tech-com) | *(Added)*
 | *(Note: Appendices follow chapter 99)* |
 
----
-
-*(Detailed <details> blocks for Chapters 01-09 and Appendices for Part 3 would follow here, using the corrected filenames and paths as generated previously)*
-
----
-
-[**Link to Part IV Detailed ToC**](#part-iv-ground-infrastructure--automation-gp-gro-%f0%9f%8f%97%ef%b8%8f%f0%9f%94%a6)
 
 ---
 
@@ -667,15 +652,6 @@ graph TD
 | 04 | ROBOTICS        | Ground Robotics & Automation                  | `GP-GRO-ROBOTICS-0400-04-000-IDX-A.md` | [Details](#chapter-04-ground-robotics--automation-gp-gro) | *(Corrected anchor)*
 | 05 | GSE             | Ground Support Equipment (GSE)                | `GP-GRO-GSE-0400-05-000-IDX-A.md` | [Details](#chapter-05-ground-support-equipment-gse-gp-gro) | *(Corrected anchor)*
 | 99 | SPECIAL         | Special / Emerging Tech (GRO)                 | `GP-GRO-SPECIAL-0400-99-000-IDX-A.md` | [Details](#chapter-99-special--emerging-tech-gro-gp-gro) |
-| *(Note: Appendices follow chapter 99)* |
-
----
-
-*(Detailed <details> blocks for Chapters 00-05 and 99, and Appendices for Part 4 would follow here, using the corrected filenames and paths as generated previously)*
-
----
-
-[**Link to Part V Detailed ToC**](#part-v-supply-chain--ethical-logistics-gp-supl-%f0%9f%93%a3%e2%9c%a8)
 
 ---
 
@@ -695,13 +671,7 @@ graph TD
 
 ---
 
-*(Detailed <details> blocks for Chapters 00-03 and 99, and Appendices for Part 5 would follow here, using the corrected filenames and paths as generated previously)*
 
----
-
-[**Link to Part VI Detailed ToC**](#part-vi-robotic-assembly--maintenance-gp-rame-%f0%9f%a7%a9%f0%9f%9b%a0%ef%b8%8f)
-
----
 
 ## Part VI: Robotic Assembly & Maintenance (GP-RAME) 🛠️🤖
 
@@ -725,15 +695,6 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Tech (RAME)       | `GP-RAME-SPECIAL-0600-99-000-IDX-A.md` | [Details](#chapter-99-special--emerging-tech-rame) |
 | *(Note: Appendices follow chapter 99)* |
 
----
-
-*(Detailed <details> blocks for Chapters 00-99 and Appendices for Part 6 would follow here, using the corrected filenames and paths as generated previously)*
-
----
-
-[**Link to Part VII Detailed ToC**](#part-vii-aerial-drones-ai-piloted-drones-gp-adr-%f0%9f%9a%81%f0%9f%a7%a9)
-
----
 
 ## Part VII: Aerial Drones (AI-Piloted Drones) (GP-ADR) 🚁🤖
 
@@ -771,13 +732,6 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Tech (ADR)     | `GP-ADR-*-99-000-IDX-A.md`   | [Details](#chapter-99-special--emerging-tech-adr-gp-adr) |
 | *(Note: Appendices follow chapter 99)* |
 
----
-
-*(Detailed <details> blocks for Chapters 00-99 and Appendices for Part 7 would follow here)*
-
----
-
-[**Link to Part VIII Detailed ToC**](#part-viii-flying-city-cars-family-vehicles-gp-ff-city-%f0%9f%9a%95%f0%9f%9a%97)
 
 ---
 
@@ -821,14 +775,6 @@ graph TD
 
 ---
 
-*(Detailed <details> blocks for Chapters 00-99 and Appendices for Part 8 would follow here)*
-
----
-
-[**Link to Part IX Detailed ToC**](#part-ix-space-satellites--probes-gp-space-sapr-%f0%9f%9a%b0%f0%9f%a7%9f)
-
----
-
 ## Part IX: Space Satellites & Probes (GP-SPACE-SAPR) 🛰️🔬
 
 
@@ -868,16 +814,6 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Tech           | `GP-SPACE-SAPR-*-99-000-IDX-A.md` | [Details](#chapter-99-special--emerging-tech-gp-space-sapr) |
 | *(Note: Appendices follow chapter 99)* |
 
-> *Canon*: each “IDX” is the root for its chapter; bullets beneath (to be added) point to OV, SDD, SPEC, ICD, PROC, etc.
-
----
-
-*(Detailed <details> blocks for Chapters 00-99 and Appendices for Part 9 would follow here)*
-
----
-
-[**Link to Part X Detailed ToC**](#part-x-program-management--operations-gp-pmo)
-
 ---
 
 ## Part X: Program Management & Operations (GP-PMO) 🗓️🔒
@@ -904,36 +840,10 @@ graph TD
 | 99 | SPECIAL         | Special / Emerging Ops Tech       | `GP-PMO-*-99-000-IDX-A.md`   | [Details](#chapter-99-special--emerging-ops-tech-gp-pmo) |
 | *(Note: Appendices follow chapter 99)* |
 
-
----
-
-[**Link to Part XI Detailed ToC**](#part-xi-future-ready-service-engagement-frse-gp-frse-%f0%9f%aa%a9%f0%9f%95%b5%ef%b8%8f%ef%b8%8f)
-
 ---
 
 ## Part XI: Future Ready Service Engagement (FRSE) (GP-FRSE) 🛠️🚁
 
-*(Based on ToC-GP-FRSE.md)*
-
-*Purpose: Defines advanced robotic and structural service systems, field intelligence, and agent-based cognition for autonomous aerospace service deployment.*
-
-*Filename pattern*: `GP-FRSE-[SubDomainCode]-[SeqCode]-[ChapterCode]-[SubjectCode]-[InfoCode]-[Rev].[ext]`
-*(Note: For GP-FRSE, SeqCode is typically the baseline like `1100`)*
-
-### Sub-Domain Legend (Part 11)
-
-| Code         | Icon | Badge | Element Title                             | Short Description                                                       |
-| :----------- | :---:| :----:| :---------------------------------------- | :---------------------------------------------------------------------- |
-| **GENERAL**  | 🧭   | gray  | General (FRSE)                            | Scope, standards, overarching FRSE concepts                           |
-| **INSP**     | 🔍   | teal  | Inspection Robotics                       | Autonomous NDT, visual/thermal inspection drones/robots                 |
-| **SERV**     | 🛠️   | lime  | Service Operations (Autonomous)           | Field repairs, component swaps, remote servicing logic                 |
-| **RETROFIT** | ⚙️   | amber | Retrofit & Upgrades                       | In-field structural/system augmentation, modular upgrades              |
-| **HYB**      | 🤖   | purple| Hybrid Conscious Agents                   | Autonomous configuration, agent cognition models                        |
-| **IQUALOPS** | ✨   | gold  | Quantum-Ethical Operating Layer           | iQualOps OS for optimized, ethical, sustainable service execution     | *(Added)*
-| **AI**       | 🧠   | fuchsia | Embedded Cognition & Co-Pilot Logic     | Service-specific AI models, decision support, human-agent interaction |
-| **TEST**     | 🔬   | cyan  | Testbeds & Validation (FRSE)              | FRSE system verification, simulation environments, performance metrics |
-| **CROB**     | 🔗   | sky   | Cross-Robotics Federated Agents           | Inter-agent coordination, swarm service logic, shared tasks           |
-| **SPECIAL**  | ⭐   | silver| Special / Emerging FRSE Logics          | Experimental concepts, future service paradigms                         |
 
 ### Chapter Index (Part 11)
 
