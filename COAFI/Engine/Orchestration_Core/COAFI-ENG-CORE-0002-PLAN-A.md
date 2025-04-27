@@ -1,3 +1,24 @@
+---
+title: "COAFI – Orchestration Core Phase 1 Implementation Guide"
+document_id: COAFI-ENG-ORCHCORE-0002-PLAN-A
+version: v0.9.2-PRELIMINARY
+status: PROPOSAL
+author: GAIA Platforms Initiative
+date: 2025-04-27
+tags:
+  - COAFI
+  - Orchestration Core
+  - Temporal
+  - Federation
+  - Infrastructure-as-Code
+  - PostgreSQL
+  - Kubernetes
+  - Terraform
+infoCode: INFO-PLAN
+utids: TBD
+---
+
+
 ### COAFI Orchestration Core - Phase 1 Implementation Guide
 
 *GenAI Proposal Status: This document provides implementation guidance for the initial phase of the COAFI Orchestration Core. This is an AI-generated proposal and should be reviewed by domain experts before implementation.*
