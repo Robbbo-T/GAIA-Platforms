@@ -12,6 +12,8 @@ tags:
   - Federation
   - Ethics
   - Traceability
+  - Requirements Management
+  - Design Traceability
 infoCode: INFO-OV
 utids: TBD
 ---
@@ -35,6 +37,7 @@ The primary purpose of COAFI is to provide a comprehensive and structured approa
 - **Compliance:** Ensuring compliance with defined policies, standards, and regulations.
 - **Federation:** Enabling seamless integration and interoperability across diverse GAIA domains.
 - **Ethics and Governance:** Embedding ethical considerations and governance frameworks into the documentation and processes.
+- **Requirements Management and Design Traceability:** Establishing comprehensive requirements management and design traceability in accordance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ## Key Components
 
@@ -45,6 +48,7 @@ COAFI is composed of several key components that work together to achieve its pu
 - **Compliance Framework:** A set of policies, standards, and regulations that all documents and processes must adhere to, ensuring consistency and compliance across the GAIA ecosystem.
 - **Federation Gateway:** A mechanism for managing communication and policy synchronization across federated domains, ensuring interoperability and alignment with global standards.
 - **Ethical Governance:** A framework for embedding ethical considerations into the documentation and processes, ensuring that all actions and decisions are aligned with GAIA's core values.
+- **Requirements Management and Design Traceability System:** A system to manage requirements and design traceability, ensuring compliance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ## Goals and Objectives
 
@@ -55,6 +59,7 @@ The goals and objectives of COAFI are to:
 - **Maintain Compliance:** Ensure that all documents and processes adhere to defined policies, standards, and regulations, reducing the risk of non-compliance.
 - **Promote Federation:** Enable seamless integration and interoperability across diverse GAIA domains, fostering collaboration and innovation.
 - **Support Ethical Governance:** Embed ethical considerations into the documentation and processes, ensuring that all actions and decisions are aligned with GAIA's core values.
+- **Implement Requirements Management and Design Traceability:** Establish a robust system for managing requirements and design traceability, ensuring compliance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ## Conclusion
 

@@ -86,7 +86,22 @@ dirs_to_create = [
     "Interfaces/Adapters",
     "Tooling/Document_Templates",
     "Tooling/Script_Generators",
-    "Tooling"
+    "Tooling",
+    "GAIA-Platforms/Domains/AERO/CIVIL/ATA-CHAPTERS", # P11c0
+    "GAIA-Platforms/DOCS/COAFI-FOUND-0001-OV-A", # P11c0
+    "GAIA-Platforms/DOCS/COAFI-FOUND-0002-PRINC-A", # P11c0
+    "GAIA-Platforms/DOCS/COAFI-FOUND-0003-FED-A", # P11c0
+    "GAIA-Platforms/DOCS/COAFI-TOC-0001-OV-A", # P11c0
+    "GAIA-Platforms/DOCS/GP-DOCS-0001-PROTOCOL-A", # P11c0
+    "GAIA-Platforms/DOCS/GP-DOCS-0002-PROTOCOL-A", # P11c0
+    "GAIA-Platforms/Domains/AERO/CIVIL/COMMERCIAL", # P318b
+    "GAIA-Platforms/Domains/AERO/CIVIL/GP-AERO-CIVIL-INTERFACE-GRO-0003-SPEC-A", # P318b
+    "GAIA-Platforms/Domains/AERO/GP-AERO-AISF-HT-FRAMEWORK-A", # P318b
+    "GAIA-Platforms/Domains/COM/GP-COM-INAC-0001-OV-A", # P318b
+    "GAIA-Platforms/Domains/COM/InaC/GP-COM-INAC-TOC-A", # P318b
+    "GAIA-Platforms/Engine/COAFI-ENG-ENGINE-0001-SPEC-A", # P318b
+    "GAIA-Platforms/GAIA-AIR", # P318b
+    "GAIA-Platforms" # P318b
 ]
 
 # Function to create directories and placeholder READMEs

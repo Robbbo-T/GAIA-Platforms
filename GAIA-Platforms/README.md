@@ -35,6 +35,7 @@ It consolidates major frameworks, systems, and innovations into a coherent opera
 
 - **COAFI (Canonical Orchestrated Architecture File Index):** Master structuring of aerospace documents and processes.
 - **CD-COATFI-AERODCP:** Civil-Dedicated, Component-Oriented, Advanced-Technology-First Implementation strategy for civil transport and exploration.
+- **GP-AMPEL (GAIA Platforms - Aerospace Management and Performance Evaluation Layer):** Comprehensive requirements management and design traceability system ensuring compliance with AS9100, ISO 14001, EASA CS-25, and S1000D BREX.
 
 ## Documentation
 
