@@ -1,10 +1,10 @@
 ---
 title: "COAFI Orchestration Core - Architecture & Implementation Guide"
 document_id: COAFI-ENG-CORE-0001-GUIDE-A # Example ID
-version: v0.9.2-PRELIMINARY
-status: PROPOSAL
+version: v0.9.3-DRAFT
+status: DRAFT
 author: GAIA Platforms Initiative (Generated)
-date: 2025-04-27
+date: 2025-04-28
 tags:
   - COAFI
   - Orchestration
@@ -231,6 +231,29 @@ export interface ErrorPolicy {
   retryStrategy: RetryStrategy;
   escalationThreshold: EscalationThreshold;
   actions: ErrorAction[];
+}
+```
+
+### 6. Telemetry Module
+
+Collects and records metrics and logs for monitoring and observability.
+
+```typescript
+// src/telemetry/module.ts
+export interface TelemetryModule {
+  // Metrics
+  recordMetric(name: string, value: number, labels?: Record<string, string>): Promise<void>;
+  incrementCounter(name: string, labels?: Record<string, string>): Promise<void>;
+  observeHistogram(name: string, value: number, labels?: Record<string, string>): Promise<void>;
+  
+  // Logs
+  logInfo(message: string, context?: Record<string, any>): Promise<void>;
+  logWarning(message: string, context?: Record<string, any>): Promise<void>;
+  logError(message: string, context?: Record<string, any>): Promise<void>;
+  
+  // Traces
+  startTrace(name: string, context?: Record<string, any>): Promise<string>;
+  endTrace(traceId: string, context?: Record<string, any>): Promise<void>;
 }
 ```
 

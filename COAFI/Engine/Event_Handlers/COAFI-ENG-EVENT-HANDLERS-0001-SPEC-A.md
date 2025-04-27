@@ -1,7 +1,7 @@
 ---
 title: "COAFI – Event Handlers System Specification"
 document_id: COAFI-ENG-EVENT-HANDLERS-0001-SPEC-A
-version: v0.9.1-PRELIMINARY # Incremented version
+version: v0.9.2-PRELIMINARY # Incremented version
 status: DRAFT
 author: GAIA Platforms Initiative
 date: 2025-04-27
@@ -66,6 +66,34 @@ This section outlines the primary event types COAFI is designed to handle and th
 
 > _Nota: Implementar cada paso de la acción como método o función modular para facilitar pruebas unitarias y extensibilidad._
 
+##### Example Event Payload
+
+```json
+{
+  "repositoryUrl": "https://github.com/gaia-platforms/coafi",
+  "commitSha": "abc123def456",
+  "branch": "main",
+  "author": "developer@example.com",
+  "filesChanged": [
+    {
+      "path": "COAFI/Schema/specification.yaml",
+      "changeType": "modified"
+    },
+    {
+      "path": "COAFI/Docs/overview.md",
+      "changeType": "added"
+    }
+  ]
+}
+```
+
+##### Expected Outcome
+
+- Validation results for each file (success or detailed error).
+- Documentation generation status (success or error).
+- Notifications sent to dependent systems.
+- Event logged in BITT with all relevant metadata.
+
 ---
 
 ### API Calls to COAFI Endpoints
@@ -78,6 +106,51 @@ This section outlines the primary event types COAFI is designed to handle and th
   - Returning data to the caller.
   - Logging the API interaction via BITT.
 
+#### Handler Detail: `APIRequestHandler`
+
+* **Use case:** API calls to COAFI endpoints
+* **Detección**
+    * COAFI expone APIs para que sistemas externos o usuarios interactúen con sus funciones.
+    * Detecta solicitudes entrantes a los endpoints definidos en `COAFI/Interfaces/API_Definitions/`.
+* **Acción**
+    1.  **Validar solicitud**:
+        * Verificar autenticación y autorización del solicitante.
+        * Validar el payload de la solicitud contra el esquema definido.
+    2.  **Ejecutar acción correspondiente**:
+        * Consultar o actualizar registros en `COAFI/Registries/`.
+        * Iniciar workflows específicos en `COAFI/Workflows/`.
+        * Devolver datos al solicitante.
+    3.  **Registrar interacción en BITT**:
+        * Crear un registro de auditoría inmutable en BITT con: Endpoint, método, solicitante, payload, resultado de la acción, y el UTidS del evento.
+
+> _Nota: Implementar cada paso de la acción como método o función modular para facilitar pruebas unitarias y extensibilidad._
+
+##### Example Event Payload
+
+```json
+{
+  "endpoint": "/api/registry/update",
+  "method": "POST",
+  "requestId": "req-789xyz",
+  "authToken": "Bearer abcdef123456",
+  "body": {
+    "registryId": "doc-registry",
+    "entryId": "entry-001",
+    "data": {
+      "title": "Updated Document Title",
+      "content": "Updated content of the document."
+    }
+  }
+}
+```
+
+##### Expected Outcome
+
+- Validation results (success or detailed error).
+- Registry update status (success or error).
+- Workflow initiation status (if applicable).
+- Event logged in BITT with all relevant metadata.
+
 ---
 
 ### Events Logged in the BITT Ledger
@@ -88,6 +161,49 @@ This section outlines the primary event types COAFI is designed to handle and th
   - Generating notifications to relevant stakeholders.
   - Initiating automated remediation or escalation workflows.
   - Updating the status of related items within COAFI registries.
+
+#### Handler Detail: `BITTEventHandler`
+
+* **Use case:** Events logged in the BITT ledger
+* **Detección**
+    * COAFI monitorea el ledger BITT para eventos específicos predefinidos.
+    * Detecta eventos registrados por otros componentes de GAIA (p. ej., fallos de cumplimiento, alertas críticas del sistema, finalización de hitos).
+* **Acción**
+    1.  **Filtrar y procesar eventos relevantes**:
+        * Identificar eventos de interés según patrones predefinidos.
+        * Extraer datos relevantes del evento.
+    2.  **Generar notificaciones a stakeholders**:
+        * Enviar notificaciones a las partes interesadas relevantes.
+    3.  **Iniciar workflows de remediación o escalamiento**:
+        * Iniciar workflows automatizados para remediación o escalamiento según el tipo de evento.
+    4.  **Actualizar estado de ítems relacionados en COAFI**:
+        * Actualizar el estado de ítems relacionados en los registros de COAFI.
+
+> _Nota: Implementar cada paso de la acción como método o función modular para facilitar pruebas unitarias y extensibilidad._
+
+##### Example Event Payload
+
+```json
+{
+  "eventType": "GAIA:COMPLIANCE:FAILURE",
+  "eventId": "evt-456def",
+  "timestamp": "2025-04-27T14:00:00Z",
+  "source": "compliance-service",
+  "details": {
+    "complianceCheckId": "check-123",
+    "failureReason": "Data privacy violation",
+    "affectedEntities": ["entity-001", "entity-002"]
+  }
+}
+```
+
+##### Expected Outcome
+
+- Event filtering and processing results (success or detailed error).
+- Notifications sent to relevant stakeholders.
+- Remediation or escalation workflow initiation status.
+- Related items' status updated in COAFI registries.
+- Event logged in BITT with all relevant metadata.
 
 ---
 
