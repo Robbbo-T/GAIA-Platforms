@@ -1,12 +1,7 @@
-# COAFI - Event Handlers
-
-This directory contains the modules and logic responsible for handling specific events that trigger actions within the COAFI orchestration engine. These handlers act as the reactive component of COAFI, allowing it to respond dynamically to changes and external stimuli within the GAIA Platforms ecosystem.
-
----
 ---
 title: "COAFI – Event Handlers System Specification"
 document_id: COAFI-ENG-EVENT-HANDLERS-0001-SPEC-A
-version: v0.9-PRELIMINARY
+version: v0.9.1-PRELIMINARY # Incremented version
 status: DRAFT
 author: GAIA Platforms Initiative
 date: 2025-04-27
@@ -16,6 +11,7 @@ tags:
   - Federation
   - BITT
   - Ethics
+  - Git
 infoCode: INFO-SPEC
 utids: TBD
 ---
@@ -34,22 +30,48 @@ The core purpose of the Event Handlers is to define how COAFI reacts to various 
 
 ## Specific Trigger Handling
 
+This section outlines the primary event types COAFI is designed to handle and the general actions associated with each.
+
 ### Git Commits/Merges in Monitored Repositories
-- **Detection**:  
+- **Detection**:
   COAFI monitors designated Git repositories for new commits or merges affecting tracked files (e.g., specification documents, configuration files).
-- **Action**:  
+- **Action**:
   Upon detection, the relevant handler (e.g., `GitCommitHandler`) parses the changes and initiates appropriate workflows, such as:
   - Validating the changed content against defined schemas (`COAFI/Schema/`).
   - Triggering automated documentation generation or updates (`COAFI/Generators/`).
   - Notifying dependent systems or updating COAFI registries (`COAFI/Registries/`).
   - Logging the change event via BITT.
 
+#### Handler Detail: `GitCommitHandler`
+
+* **Use case:** Commits/Merges in monitored repositories
+* **Detección**
+    * COAFI vigila uno o más repositorios Git configurados.
+    * Detecta nuevos commits o merges que modifican archivos rastreados (p. ej., documentos de especificación, archivos de configuración).
+* **Acción**
+    1.  **Parsear cambios**:
+        * Extraer `diff` y rutas de los archivos afectados.
+        * Identificar tipo de archivo (esquema, doc, config, etc.).
+    2.  **Validar contenido**:
+        * Comparar cada archivo modificado contra los esquemas definidos en `COAFI/Schema/`.
+        * Generar error o advertencia si no cumple el esquema. Registrar resultado.
+    3.  **Generar o actualizar documentación/artefactos**:
+        * Invocar el módulo generador correspondiente en `COAFI/Generators/` (si aplica según el tipo de archivo).
+        * Reconstruir secciones impactadas, actualizar índices o generar artefactos derivados.
+    4.  **Notificar sistemas dependientes**:
+        * Disparar eventos o llamadas API/mensajes a servicios registrados como dependientes en `COAFI/Registries/`.
+        * Incluir payload con metadatos relevantes (commit SHA, autor, lista de archivos modificados, resultado de validación).
+    5.  **Registrar el evento en BITT**:
+        * Crear un registro de auditoría inmutable en BITT con: Commit SHA, autor, fecha, repositoro, archivos modificados, resultado de validación, resultado de generación (si aplica), y el UTidS del evento.
+
+> _Nota: Implementar cada paso de la acción como método o función modular para facilitar pruebas unitarias y extensibilidad._
+
 ---
 
 ### API Calls to COAFI Endpoints
-- **Detection**:  
+- **Detection**:
   COAFI exposes APIs (`COAFI/Interfaces/API_Definitions/`) for external systems or users to interact with its functions (e.g., query registries, submit new information).
-- **Action**:  
+- **Action**:
   The `APIRequestHandler` validates incoming requests (authentication, payload schema) and executes the corresponding action, which might involve:
   - Querying or updating COAFI registries.
   - Initiating specific orchestration workflows (`COAFI/Workflows/`).
@@ -59,9 +81,9 @@ The core purpose of the Event Handlers is to define how COAFI reacts to various 
 ---
 
 ### Events Logged in the BITT Ledger
-- **Detection**:  
+- **Detection**:
   COAFI can monitor the BITT ledger for specific, predefined event types logged by other GAIA components (e.g., compliance failures, critical system alerts, completion of milestones).
-- **Action**:  
+- **Action**:
   The `BITTEventHandler` filters and processes relevant BITT events, triggering actions like:
   - Generating notifications to relevant stakeholders.
   - Initiating automated remediation or escalation workflows.
@@ -70,17 +92,17 @@ The core purpose of the Event Handlers is to define how COAFI reacts to various 
 ---
 
 ### Messages Received via Federated Communication Channels
-- **Detection**:  
+- **Detection**:
   COAFI listens on designated secure communication channels (potentially using protocols defined in `Domains/AERO/INTERFACE/Data-Control-Interfaces/` or `Domains/SPACE/INTERFACE/`) for messages from other federated GAIA domains or systems.
-- **Action**:  
+- **Action**:
   Handlers parse incoming messages, verify authenticity, and initiate workflows based on the message content and source domain. This enables cross-domain coordination and data synchronization orchestrated by COAFI.
 
 ---
 
 ### Scheduled Tasks or Time-Based Triggers
-- **Detection**:  
+- **Detection**:
   An internal scheduler within the `COAFI/Engine/` triggers predefined tasks at specific times or intervals.
-- **Action**:  
+- **Action**:
   Handlers execute routine tasks such as:
   - Generating periodic compliance or status reports.
   - Performing system health checks on COAFI itself.
@@ -159,4 +181,3 @@ The core purpose of the Event Handlers is to define how COAFI reacts to various 
 
 ---
 
-*Note: Further detailed specifications, code implementations, and specific error handling procedures will be developed within the respective modules and documented accordingly.*
