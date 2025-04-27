@@ -1,7 +1,7 @@
 ---
 title: "COAFI – Event Handlers Implementation Plan"
 document_id: COAFI-ENG-EVENT-HANDLERS-0002-PLAN-A
-version: v0.9.2-PRELIMINARY
+version: v1.0.0
 status: PROPOSAL
 author: GAIA Platforms Initiative
 date: 2025-04-27
@@ -18,7 +18,7 @@ utids: TBD
 
 ### COAFI Event Handlers Implementation Plan
 
-*GenAI Proposal Status: This document outlines a detailed implementation plan for the COAFI Event Handlers System based on the v0.9.2-PRELIMINARY specification. This is an AI-generated proposal and should be reviewed by domain experts before implementation.*
+*GenAI Proposal Status: This document outlines a detailed implementation plan for the COAFI Event Handlers System based on the v1.0.0 specification. This is an AI-generated proposal and should be reviewed by domain experts before implementation.*
 
 ## 1. Component Design
 
@@ -102,7 +102,14 @@ abstract class BaseEventHandler<T extends EventPayload> {
 
   // Additional common methods...
 }
-Handler-Specific DesignsGitCommitHandler// Assuming definitions for Event, GitCommitPayload, HandlerResult, ChangedFile, FileProcessingResult exist
+```
+
+### Handler-Specific Designs
+
+#### GitCommitHandler
+
+```typescript
+// Assuming definitions for Event, GitCommitPayload, HandlerResult, ChangedFile, FileProcessingResult exist
 // Assuming clients BITTClient, RegistryClient, GitClient exist
 // Assuming services SchemaValidator, GeneratorService, WorkflowEngine exist
 
@@ -227,7 +234,12 @@ class GitCommitHandler extends BaseEventHandler<GitCommitPayload> {
 
   // Additional helper methods...
 }
-APIRequestHandler// Assuming definitions for Event, APIRequestPayload, HandlerResult exist
+```
+
+#### APIRequestHandler
+
+```typescript
+// Assuming definitions for Event, APIRequestPayload, HandlerResult exist
 // Assuming clients BITTClient, RegistryClient exist
 // Assuming services SchemaValidator, AuthenticationService, WorkflowEngine exist
 
@@ -328,7 +340,12 @@ class APIRequestHandler extends BaseEventHandler<APIRequestPayload> {
 
   // Add more handler methods for other endpoints...
 }
-Event Dispatcher Design// Assuming definitions for EventBus, HandlerRegistry, BITTClient, ConcurrencyManager exist
+```
+
+### Event Dispatcher Design
+
+```typescript
+// Assuming definitions for EventBus, HandlerRegistry, BITTClient, ConcurrencyManager exist
 // Assuming specific handler classes like GitCommitHandler, APIRequestHandler exist
 
 class EventDispatcher {
@@ -461,7 +478,14 @@ class EventDispatcher {
       return !(error instanceof ValidationError); // Simple example
   }
 }
-2. Proof of Concept ImplementationMinimal Event Dispatcher// src/dispatcher.ts
+```
+
+## 2. Proof of Concept Implementation
+
+### Minimal Event Dispatcher
+
+```typescript
+// src/dispatcher.ts
 import { EventEmitter } from 'events';
 import { v4 as uuidv4 } from 'uuid';
 import { GitCommitHandler } from './handlers/git-commit-handler'; // Assuming handler exists
@@ -546,7 +570,12 @@ export class MinimalDispatcher {
     this.eventBus.publish('git.commit', payload);
   }
 }
-GitCommitHandler Implementation (Simplified for PoC)// src/handlers/git-commit-handler.ts
+```
+
+### GitCommitHandler Implementation (Simplified for PoC)
+
+```typescript
+// src/handlers/git-commit-handler.ts
 // Simplified BaseEventHandler for PoC - assumes Event, HandlerResult types exist
 abstract class BaseEventHandlerPOC<T> {
     constructor(
@@ -649,7 +678,12 @@ export class GitCommitHandler extends BaseEventHandlerPOC<GitCommitPayload> {
     return Math.random() > 0.1; // 90% success for PoC
   }
 }
-Mock Clients (Simplified for PoC)// src/clients/bitt-client.ts
+```
+
+### Mock Clients (Simplified for PoC)
+
+```typescript
+// src/clients/bitt-client.ts
 export class BITTClient {
   public async logEvent(event: any): Promise<void> {
     console.log('[PoC BITT Log]:', JSON.stringify(event.type, null, 2)); // Log only type for brevity
@@ -721,7 +755,12 @@ export class AuthenticationService {
          // Assume authorized for PoC
     }
 }
-Usage Example (PoC)// src/index.ts
+```
+
+### Usage Example (PoC)
+
+```typescript
+// src/index.ts
 import { MinimalDispatcher } from './dispatcher';
 // Define or import the necessary types if not globally available
 type GitCommitPayload = { commitSha: string; repositoryUrl: string; branch: string; author: string; message: string };
@@ -751,7 +790,16 @@ main().catch(error => {
     console.error("PoC execution failed:", error);
     process.exit(1);
 });
-3. Testing FrameworkTesting StrategyUnit Testing// tests/unit/handlers/git-commit-handler.test.ts
+```
+
+## 3. Testing Framework
+
+### Testing Strategy
+
+#### Unit Testing
+
+```typescript
+// tests/unit/handlers/git-commit-handler.test.ts
 import { GitCommitHandler } from '../../../src/handlers/git-commit-handler';
 import { BITTClient } from '../../../src/clients/bitt-client';
 import { RegistryClient } from '../../../src/clients/registry-client';
@@ -877,7 +925,12 @@ describe('GitCommitHandler Unit Tests (PoC)', () => {
   // - Error during gitClient.getFileContent call
   // - Error during workflowEngine.startWorkflow call
 });
-Integration Testing// tests/integration/git-workflow.test.ts
+```
+
+#### Integration Testing
+
+```typescript
+// tests/integration/git-workflow.test.ts
 import { MinimalDispatcher } from '../../src/dispatcher'; // Use the PoC dispatcher
 import { BITTClient } from '../../src/clients/bitt-client';
 import { GitClient } from '../../src/clients/git-client';
@@ -985,7 +1038,12 @@ describe('Git Commit Workflow Integration Test (PoC)', () => {
   // - Test scenario where file validation fails inside the handler
   // - Test scenario where workflow start fails
 });
-Load Testing// tests/load/dispatcher-load.test.ts
+```
+
+#### Load Testing
+
+```typescript
+// tests/load/dispatcher-load.test.ts
 import { MinimalDispatcher } from '../../src/dispatcher';
 import { performance } from 'perf_hooks'; // Use Node.js performance hooks
 import { GitCommitHandler } from '../../src/handlers/git-commit-handler'; // Import the actual handler
@@ -1071,7 +1129,12 @@ describe('Dispatcher Load Test (PoC)', () => {
   }, 20000); // Increase Jest timeout for load tests
 
 });
-Test Configuration// jest.config.js
+```
+
+### Test Configuration
+
+```javascript
+// jest.config.js
 module.exports = {
   preset: 'ts-jest', // Use ts-jest preset for TypeScript
   testEnvironment: 'node', // Running tests in Node.js environment
@@ -1107,7 +1170,14 @@ module.exports = {
   // Optional: Clear mocks between tests
   clearMocks: true,
 };
-4. Deployment StrategyCI/CD Pipeline# .github/workflows/ci-cd.yml
+```
+
+## 4. Deployment Strategy
+
+### CI/CD Pipeline
+
+```yaml
+# .github/workflows/ci-cd.yml
 name: COAFI Event Handlers CI/CD
 
 on:
@@ -1275,7 +1345,12 @@ jobs:
           kubectl set image deployment/coafi-event-handlers \
             event-handlers=ghcr.io/${{ github.repository_owner }}/coafi-event-handlers:$IMAGE_TAG \
             -n coafi-prod --record # Specify namespace
-Containerization# Dockerfile
+```
+
+### Containerization
+
+```dockerfile
+# Dockerfile
 
 # ---- Builder Stage ----
 FROM node:18-alpine AS builder
@@ -1332,7 +1407,12 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
 # Define the command to run your application
 # Adjust the path to your main entry file (e.g., dist/index.js)
 CMD ["node", "dist/index.js"]
-Kubernetes Deployment# kubernetes/deployment.yaml
+```
+
+### Kubernetes Deployment
+
+```yaml
+# kubernetes/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1430,8 +1510,12 @@ spec:
     targetPort: http # Forward traffic to the container's 'http' port (8080)
     protocol: TCP
   type: ClusterIP # Internal service type (use LoadBalancer or NodePort for external access if needed)
+```
 
-Horizontal Pod Autoscaler# kubernetes/hpa.yaml
+### Horizontal Pod Autoscaler
+
+```yaml
+# kubernetes/hpa.yaml
 apiVersion: autoscaling/v2 # Use v2 for resource metrics
 kind: HorizontalPodAutoscaler
 metadata:
@@ -1477,8 +1561,12 @@ spec:
         value: 50 # Remove 50% of current replicas per evaluation period
         periodSeconds: 60
       selectPolicy: Max # Use the policy that allows the biggest decrease (most conservative here)
+```
 
-Infrastructure as Code (Terraform)# terraform/main.tf
+### Infrastructure as Code (Terraform)
+
+```hcl
+# terraform/main.tf
 
 # Configure the AWS Provider
 provider "aws" {
@@ -1655,3 +1743,8 @@ variable "task_cpu" {
 }
 
 variable "task_memory" {
+  description = "Memory for the ECS task"
+  type        = string
+  default     = "1024"
+}
+```
