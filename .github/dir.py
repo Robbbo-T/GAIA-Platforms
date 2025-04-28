@@ -86,7 +86,9 @@ dirs_to_create = [
     "Interfaces/Adapters",
     "Tooling/Document_Templates",
     "Tooling/Script_Generators",
-    "Tooling"
+    "Tooling",
+    "Domains/AERO/CIVIL/ATA-CHAPTERS/00",
+    "Domains/AERO/CIVIL/ATA-CHAPTERS/00-10"
 ]
 
 # Function to create directories and placeholder READMEs
