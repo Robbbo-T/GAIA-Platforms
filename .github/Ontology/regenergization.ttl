@@ -1,74 +1,73 @@
-@prefix regen: <http://www.gaiaair.org/ontologies/regenergization#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coafi: <http://www.gaiaair.org/ontologies/coafi#> .
 
-regen: a owl:Ontology ;
-  rdfs:comment "Ontology for Regenergization Engineering: the design and operation of systems that generate energy while regenerating environments." ;
-  rdfs:label "Regenergization Engineering Ontology" .
+# Ontology Metadata
+coafi: a owl:Ontology ;
+    rdfs:label "COAFI Ontology" ;
+    rdfs:comment "Ontology for Construct Ontology Atomic Forwarded Instructions (COAFI), the semantic foundation of GAIA AIR." .
 
 # Core Classes
-regen:System a owl:Class ;
-  rdfs:label "System" ;
-  rdfs:comment "A structured entity capable of interaction with its environment." .
+coafi:AtomicConstruct a owl:Class ;
+    rdfs:label "Atomic Construct" ;
+    rdfs:comment "An indivisible unit of factual information within COAFI." .
 
-regen:RegenergizationSystem a owl:Class ;
-  rdfs:subClassOf regen:System ;
-  rdfs:label "Regenergization System" ;
-  rdfs:comment "A system that simultaneously generates energy and restores environmental quality." .
+coafi:ConstructiveChain a owl:Class ;
+    rdfs:label "Constructive Chain" ;
+    rdfs:comment "A logical sequence where each atomic construct builds upon previous ones." .
 
-regen:EnergyGenerationModule a owl:Class ;
-  rdfs:label "Energy Generation Module" ;
-  rdfs:comment "A component designed to produce usable energy from ambient resources." .
+coafi:ContextualDomain a owl:Class ;
+    rdfs:label "Contextual Domain" ;
+    rdfs:comment "The specific domain or environment where constructs are relevant and validated." .
 
-regen:EnvironmentalRestorationModule a owl:Class ;
-  rdfs:label "Environmental Restoration Module" ;
-  rdfs:comment "A component that actively improves the environmental conditions it operates within." .
+coafi:ForwardedInstruction a owl:Class ;
+    rdfs:label "Forwarded Instruction" ;
+    rdfs:comment "An instruction that extends, forwards, or applies an atomic construct." .
 
-regen:SolidarityNode a owl:Class ;
-  rdfs:label "Solidarity Node" ;
-  rdfs:comment "A unit capable of sharing resources with neighboring systems to enhance mutual survival and growth." .
+coafi:InteroperableConstruct a owl:Class ;
+    rdfs:label "Interoperable Construct" ;
+    rdfs:comment "A construct designed to be reusable across multiple systems and domains." .
 
-regen:LivingLoop a owl:Class ;
-  rdfs:label "Living Loop" ;
-  rdfs:comment "A network of regenergization systems connected in a dynamic, life-enhancing cycle." .
+coafi:TemporalAssertion a owl:Class ;
+    rdfs:label "Temporal Assertion" ;
+    rdfs:comment "A construct whose validity is bound or annotated by time constraints." .
 
-# Key Properties
-regen:hasEnergyModule a owl:ObjectProperty ;
-  rdfs:domain regen:RegenergizationSystem ;
-  rdfs:range regen:EnergyGenerationModule ;
-  rdfs:comment "Links a regenergization system to its energy generation module." .
+# Properties
+coafi:buildsUpon a owl:ObjectProperty ;
+    rdfs:domain coafi:AtomicConstruct ;
+    rdfs:range coafi:AtomicConstruct ;
+    rdfs:comment "Indicates that an atomic construct is logically built upon another." .
 
-regen:hasRestorationModule a owl:ObjectProperty ;
-  rdfs:domain regen:RegenergizationSystem ;
-  rdfs:range regen:EnvironmentalRestorationModule ;
-  rdfs:comment "Links a regenergization system to its environmental restoration module." .
+coafi:hasContext a owl:ObjectProperty ;
+    rdfs:domain coafi:AtomicConstruct ;
+    rdfs:range coafi:ContextualDomain ;
+    rdfs:comment "Links a construct to its contextual domain." .
 
-regen:connectsToNode a owl:ObjectProperty ;
-  rdfs:domain regen:SolidarityNode ;
-  rdfs:range regen:SolidarityNode ;
-  rdfs:comment "Defines a solidarity connection between nodes." .
+coafi:extendsThrough a owl:ObjectProperty ;
+    rdfs:domain coafi:ForwardedInstruction ;
+    rdfs:range coafi:AtomicConstruct ;
+    rdfs:comment "Connects a forwarded instruction to the atomic construct it extends." .
 
-regen:partOfLoop a owl:ObjectProperty ;
-  rdfs:domain regen:SolidarityNode ;
-  rdfs:range regen:LivingLoop ;
-  rdfs:comment "Indicates that a node is part of a Living Loop." .
+coafi:isInteroperableWith a owl:ObjectProperty ;
+    rdfs:domain coafi:InteroperableConstruct ;
+    rdfs:range coafi:ContextualDomain ;
+    rdfs:comment "Defines interoperability between a construct and multiple domains." .
+
+coafi:validDuring a owl:ObjectProperty ;
+    rdfs:domain coafi:TemporalAssertion ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Specifies the temporal validity of a construct." .
 
 # Example Individuals
-regen:GAIA_Fleet_Unit_001 a regen:RegenergizationSystem ;
-  rdfs:label "GAIA Fleet Unit 001" ;
-  regen:hasEnergyModule regen:SolarCaptureArray_001 ;
-  regen:hasRestorationModule regen:CO2PurificationCore_001 .
+coafi:WaterIsH2O a coafi:AtomicConstruct ;
+    rdfs:label "Water is H2O" ;
+    coafi:hasContext coafi:ChemistryDomain .
 
-regen:SolarCaptureArray_001 a regen:EnergyGenerationModule ;
-  rdfs:label "Solar Capture Array 001" .
+coafi:ChemistryDomain a coafi:ContextualDomain ;
+    rdfs:label "Chemistry Domain" .
 
-regen:CO2PurificationCore_001 a regen:EnvironmentalRestorationModule ;
-  rdfs:label "CO2 Purification Core 001" .
-
-regen:SolidarityNode_Alpha a regen:SolidarityNode ;
-  rdfs:label "Solidarity Node Alpha" ;
-  regen:partOfLoop regen:LivingLoop_Prime .
-
-regen:LivingLoop_Prime a regen:LivingLoop ;
-  rdfs:label "Living Loop Prime" .
+coafi:LifeDependsOnWater a coafi:ForwardedInstruction ;
+    rdfs:label "Life Depends on Water" ;
+    coafi:extendsThrough coafi:WaterIsH2O .
