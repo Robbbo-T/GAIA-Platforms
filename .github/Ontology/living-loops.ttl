@@ -1,0 +1,281 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ll: <http://www.gaiaair.org/ontologies/living-loops#> .
+@prefix amedeo: <http://www.gaiaair.org/ontologies/amedeo#> .
+@prefix regen: <http://www.gaiaair.org/ontologies/regenergization#> .
+@prefix pet: <http://www.gaiaair.org/ontologies/pet-core#> .
+
+# Ontology Metadata
+<http://www.gaiaair.org/ontologies/living-loops> a owl:Ontology ;
+    dc:title "Living Loops Ontology" ;
+    dc:description "An ontology defining the concepts and relationships of Living Loops - self-sustaining, interconnected systems that generate energy while cleaning their environment" ;
+    dc:creator "Amedeo Pelliccia" ;
+    dc:date "2025-04-28"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    rdfs:comment "This ontology formalizes the Living Loops framework as part of the GAIA-AIR ecosystem" .
+
+#######################
+# Core Classes
+#######################
+
+# Living Loop
+ll:LivingLoop a owl:Class ;
+    rdfs:subClassOf amedeo:FederatedEntity ;
+    rdfs:comment "A self-sustaining, regenerative system of connected nodes" .
+
+# Node Base Class
+ll:Node a owl:Class ;
+    rdfs:comment "A component in a Living Loop that performs specific functions" .
+
+# Node Types
+ll:EnergyNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that captures, transforms, and distributes energy" .
+
+ll:EnvironmentalNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that purifies, restores, and rebalances the environment" .
+
+ll:KnowledgeNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that collects, analyzes, and distributes vital information" .
+
+ll:SolidarityNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that provides support to weakened nodes and redistributes resources" .
+
+# Additional Node Types
+ll:RegenerationNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that acts as a seed capable of deploying new nodes" .
+
+ll:AdaptiveNode a owl:Class ;
+    rdfs:subClassOf ll:Node ;
+    rdfs:comment "A node that can modify its function based on environmental conditions" .
+
+# Pathway Concepts
+ll:CaptivePathway a owl:Class ;
+    rdfs:comment "A corridor or route optimized for energy capture or carbon extraction" .
+
+# Cycle Representation
+ll:Cycle a owl:Class ;
+    rdfs:comment "A complete circuit of energy, knowledge, or resource flow within a Living Loop" .
+
+ll:EnergyCycle a owl:Class ;
+    rdfs:subClassOf ll:Cycle ;
+    rdfs:comment "A cycle focused on energy capture, transformation, and distribution" .
+
+ll:KnowledgeCycle a owl:Class ;
+    rdfs:subClassOf ll:Cycle ;
+    rdfs:comment "A cycle focused on information gathering, analysis, and distribution" .
+
+ll:SolidarityCycle a owl:Class ;
+    rdfs:subClassOf ll:Cycle ;
+    rdfs:comment "A cycle focused on resource sharing and support between nodes" .
+
+ll:RegenerationCycle a owl:Class ;
+    rdfs:subClassOf ll:Cycle ;
+    rdfs:comment "A cycle focused on environmental restoration and ecosystem improvement" .
+
+# Domain Implementation Classes
+ll:ImplementationDomain a owl:Class ;
+    rdfs:comment "A specific area or context where Living Loops are applied" .
+
+ll:AerialDomain a owl:Class ;
+    rdfs:subClassOf ll:ImplementationDomain ;
+    rdfs:comment "Implementation of Living Loops in aerial vehicles or flying cities" .
+
+ll:TerrestrialDomain a owl:Class ;
+    rdfs:subClassOf ll:ImplementationDomain ;
+    rdfs:comment "Implementation of Living Loops in ground-based systems or infrastructure" .
+
+ll:OrbitalDomain a owl:Class ;
+    rdfs:subClassOf ll:ImplementationDomain ;
+    rdfs:comment "Implementation of Living Loops in orbital or space-based systems" .
+
+ll:MarineDomain a owl:Class ;
+    rdfs:subClassOf ll:ImplementationDomain ;
+    rdfs:comment "Implementation of Living Loops in marine or underwater systems" .
+
+#######################
+# Object Properties
+#######################
+
+# Core Node Relationships
+ll:hasNode a owl:ObjectProperty ;
+    rdfs:domain ll:LivingLoop ;
+    rdfs:range ll:Node ;
+    rdfs:comment "Relates a Living Loop to its constituent nodes" .
+
+ll:connectsTo a owl:ObjectProperty ;
+    rdfs:domain ll:Node ;
+    rdfs:range ll:Node ;
+    rdfs:comment "Indicates a connection between two nodes" .
+
+ll:transfersEnergy a owl:ObjectProperty ;
+    rdfs:subPropertyOf ll:connectsTo ;
+    rdfs:comment "Indicates energy transfer between nodes" .
+
+ll:sharesKnowledge a owl:ObjectProperty ;
+    rdfs:subPropertyOf ll:connectsTo ;
+    rdfs:comment "Indicates knowledge sharing between nodes" .
+
+# Additional Connection Types
+ll:providesSupportTo a owl:ObjectProperty ;
+    rdfs:subPropertyOf ll:connectsTo ;
+    rdfs:domain ll:SolidarityNode ;
+    rdfs:comment "Indicates support provision from one node to another" .
+
+ll:regeneratesEnvironmentFor a owl:ObjectProperty ;
+    rdfs:subPropertyOf ll:connectsTo ;
+    rdfs:domain ll:EnvironmentalNode ;
+    rdfs:comment "Indicates environmental regeneration provided by one node for another" .
+
+ll:deploysNewNode a owl:ObjectProperty ;
+    rdfs:domain ll:RegenerationNode ;
+    rdfs:range ll:Node ;
+    rdfs:comment "Indicates that a regeneration node deploys a new node" .
+
+# Pathway Relationships
+ll:followsPathway a owl:ObjectProperty ;
+    rdfs:domain ll:Node ;
+    rdfs:range ll:CaptivePathway ;
+    rdfs:comment "Indicates that a node follows a specific captive pathway" .
+
+ll:hasPathway a owl:ObjectProperty ;
+    rdfs:domain ll:LivingLoop ;
+    rdfs:range ll:CaptivePathway ;
+    rdfs:comment "Relates a Living Loop to its constituent pathways" .
+
+# Cycle Relationships
+ll:participatesInCycle a owl:ObjectProperty ;
+    rdfs:domain ll:Node ;
+    rdfs:range ll:Cycle ;
+    rdfs:comment "Indicates that a node participates in a specific cycle" .
+
+ll:hasCycle a owl:ObjectProperty ;
+    rdfs:domain ll:LivingLoop ;
+    rdfs:range ll:Cycle ;
+    rdfs:comment "Relates a Living Loop to its constituent cycles" .
+
+# Domain Relationships
+ll:implementedIn a owl:ObjectProperty ;
+    rdfs:domain ll:LivingLoop ;
+    rdfs:range ll:ImplementationDomain ;
+    rdfs:comment "Indicates the domain in which a Living Loop is implemented" .
+
+# Integration with other ontologies
+ll:alignsWithPrinciple a owl:ObjectProperty ;
+    rdfs:domain ll:LivingLoop ;
+    rdfs:range pet:EthicalPrinciple ;
+    rdfs:comment "Indicates that a Living Loop aligns with a specific ethical principle from PET-CORE" .
+
+ll:implementsRegenerationTechnique a owl:ObjectProperty ;
+    rdfs:domain ll:Node ;
+    rdfs:range regen:RegenerationTechnique ;
+    rdfs:comment "Indicates that a node implements a specific regeneration technique" .
+
+#######################
+# Data Properties
+#######################
+
+ll:energyCapacity a owl:DatatypeProperty ;
+    rdfs:domain ll:EnergyNode ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The energy capacity of an energy node in kWh" .
+
+ll:carbonCaptureRate a owl:DatatypeProperty ;
+    rdfs:domain ll:EnvironmentalNode ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The rate at which an environmental node captures carbon, in kg/hour" .
+
+ll:knowledgeProcessingCapacity a owl:DatatypeProperty ;
+    rdfs:domain ll:KnowledgeNode ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "The processing capacity of a knowledge node in operations per second" .
+
+ll:supportCapacity a owl:DatatypeProperty ;
+    rdfs:domain ll:SolidarityNode ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The capacity of a solidarity node to provide support to other nodes" .
+
+ll:regenerationRate a owl:DatatypeProperty ;
+    rdfs:domain ll:RegenerationNode ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The rate at which a regeneration node can deploy new nodes" .
+
+ll:cycleEfficiency a owl:DatatypeProperty ;
+    rdfs:domain ll:Cycle ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The efficiency of a cycle in a Living Loop, as a percentage" .
+
+ll:pathwayDensity a owl:DatatypeProperty ;
+    rdfs:domain ll:CaptivePathway ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The density of resources in a captive pathway" .
+
+#######################
+# Example Individuals
+#######################
+
+# Example Living Loop
+ll:FlyingRechargeCaPath a owl:NamedIndividual, ll:LivingLoop ;
+    rdfs:label "Flying Recharge Captive Path" ;
+    rdfs:comment "A Living Loop system for aerial vehicles that captures carbon and regenerates energy in flight" ;
+    ll:implementedIn ll:AerialDomain ;
+    ll:implementsRegenerationTechnique regen:CarbonToEnergyConversion .
+
+# Example Nodes
+ll:CarbonCaptureIntake a owl:NamedIndividual, ll:EnvironmentalNode ;
+    rdfs:label "Carbon Capture Intake" ;
+    rdfs:comment "An environmental node that captures carbon from the atmosphere" ;
+    ll:carbonCaptureRate "5.2"^^xsd:decimal ;
+    ll:connectsTo ll:EnergyConversionCore .
+
+ll:EnergyConversionCore a owl:NamedIndividual, ll:EnergyNode ;
+    rdfs:label "Energy Conversion Core" ;
+    rdfs:comment "An energy node that converts captured carbon into usable energy" ;
+    ll:energyCapacity "10.5"^^xsd:decimal ;
+    ll:transfersEnergy ll:FlightControlSystem .
+
+ll:FlightPathOptimizer a owl:NamedIndividual, ll:KnowledgeNode ;
+    rdfs:label "Flight Path Optimizer" ;
+    rdfs:comment "A knowledge node that optimizes flight paths for maximum carbon capture" ;
+    ll:knowledgeProcessingCapacity "1000000"^^xsd:integer ;
+    ll:sharesKnowledge ll:CarbonCaptureIntake .
+
+ll:EmergencyEnergyProvider a owl:NamedIndividual, ll:SolidarityNode ;
+    rdfs:label "Emergency Energy Provider" ;
+    rdfs:comment "A solidarity node that provides emergency energy to other aerial vehicles" ;
+    ll:supportCapacity "5.0"^^xsd:decimal ;
+    ll:providesSupportTo ll:EnergyConversionCore .
+
+# Example Cycle
+ll:AerialEnergyCycle a owl:NamedIndividual, ll:EnergyCycle ;
+    rdfs:label "Aerial Energy Cycle" ;
+    rdfs:comment "An energy cycle for aerial vehicles in the Flying Recharge Captive Path" ;
+    ll:cycleEfficiency "85.0"^^xsd:decimal .
+
+# Example Pathway
+ll:UrbanCarbonDensityPath a owl:NamedIndividual, ll:CaptivePathway ;
+    rdfs:label "Urban Carbon Density Path" ;
+    rdfs:comment "A captive pathway over urban areas with high carbon density" ;
+    ll:pathwayDensity "420.0"^^xsd:decimal .
+
+# Relationships
+ll:FlyingRechargeCaPath ll:hasNode ll:CarbonCaptureIntake ;
+    ll:hasNode ll:EnergyConversionCore ;
+    ll:hasNode ll:FlightPathOptimizer ;
+    ll:hasNode ll:EmergencyEnergyProvider ;
+    ll:hasCycle ll:AerialEnergyCycle ;
+    ll:hasPathway ll:UrbanCarbonDensityPath .
+
+ll:CarbonCaptureIntake ll:participatesInCycle ll:AerialEnergyCycle ;
+    ll:followsPathway ll:UrbanCarbonDensityPath .
+
+ll:EnergyConversionCore ll:participatesInCycle ll:AerialEnergyCycle .
+
+ll:FlightPathOptimizer ll:followsPathway ll:UrbanCarbonDensityPath .
