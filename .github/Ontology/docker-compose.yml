@@ -1,0 +1,48 @@
+# docker-compose.yml - For deploying all services
+version: '3'
+
+services:
+  ontology-server:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./ontologies:/app/ontologies
+    environment:
+      - DOMAIN=gaiaair.org
+    restart: always
+    command: gunicorn --bind 0.0.0.0:5000 ontology_server:app
+
+  api-server:
+    build: .
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./ontologies:/app/ontologies
+    environment:
+      - DOMAIN=gaiaair.org
+    restart: always
+    command: gunicorn --bind 0.0.0.0:5000 tokenflow_api:app
+
+  visualization-server:
+    build: .
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./ontologies:/app/ontologies
+      - ./visualizations:/app/visualizations
+    environment:
+      - DOMAIN=gaiaair.org
+    restart: always
+    command: gunicorn --bind 0.0.0.0:5000 visualization_server:app
+
+  docs-server:
+    build: .
+    ports:
+      - "5003:5000"
+    volumes:
+      - ./docs:/app/docs
+    environment:
+      - DOMAIN=gaiaair.org
+    restart: always
+    command: gunicorn --bind 0.0.0.0:5000 docs_server:app
