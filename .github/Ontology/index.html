@@ -1,0 +1,235 @@
+<!-- index.html - Landing page for gaiaair.org -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA AIR - Ethical AI Ontology Framework</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .section {
+            padding: 3rem 0;
+        }
+        .card {
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GAIA AIR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ontologies">Ontologies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tools">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documentation">Documentation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4">GAIA AIR</h1>
+            <p class="lead">Ethical-Semantic Foundation for Federated Intelligent Systems</p>
+            <a href="#ontologies" class="btn btn-light btn-lg mt-3">Explore Ontologies</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>About GAIA AIR</h2>
+                    <p>GAIA AIR provides a comprehensive framework for ethical AI development through the AMEDEO Ontology - a semantic foundation that ensures AI systems adhere to ethical principles while enabling federation across different domains.</p>
+                    <p>Our mission is to create a standardized approach to ethical AI that can be adopted across industries, ensuring that AI systems are developed with human values at their core.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400?text=GAIA+AIR+Framework" alt="GAIA AIR Framework" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ontologies" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Ontologies</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">AMEDEO</h5>
+                            <p class="card-text">The core ontology providing ethical-semantic foundation for AI systems.</p>
+                            <a href="https://ontology.gaiaair.org/ontologies/amedeo" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">QAO</h5>
+                            <p class="card-text">Quality Assurance Ontology for ensuring AI system quality and reliability.</p>
+                            <a href="https://ontology.gaiaair.org/ontologies/qao" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">PET-CORE</h5>
+                            <p class="card-text">Privacy-Enhancing Technologies ontology for privacy-preserving AI.</p>
+                            <a href="https://ontology.gaiaair.org/ontologies/pet-core" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">AMPEL</h5>
+                            <p class="card-text">Automated Monitoring and Policy Enforcement Layer for AI governance.</p>
+                            <a href="https://ontology.gaiaair.org/ontologies/ampel" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Tools & Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">AMEDEO Ontology Analyzer</h5>
+                            <p class="card-text">Comprehensive tool for analyzing, validating, and visualizing ontologies in the GAIA AIR ecosystem.</p>
+                            <a href="https://api.gaiaair.org" class="btn btn-primary">Access API</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ontology Visualizer</h5>
+                            <p class="card-text">Interactive visualization tools for exploring ontology structures and relationships.</p>
+                            <a href="https://viz.gaiaair.org" class="btn btn-primary">Visualize</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">TokenFlow Integration</h5>
+                            <p class="card-text">API services for integrating ontological validation into AI processing pipelines.</p>
+                            <a href="https://docs.gaiaair.org/tokenflow" class="btn btn-primary">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documentation" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Documentation</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="list-group">
+                        <a href="https://docs.gaiaair.org/getting-started" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Getting Started</h5>
+                            </div>
+                            <p class="mb-1">Introduction to the GAIA AIR ecosystem and how to get started.</p>
+                        </a>
+                        <a href="https://docs.gaiaair.org/ontologies" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Ontology Documentation</h5>
+                            </div>
+                            <p class="mb-1">Detailed documentation of all ontologies in the GAIA AIR ecosystem.</p>
+                        </a>
+                        <a href="https://docs.gaiaair.org/api" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">API Reference</h5>
+                            </div>
+                            <p class="mb-1">Complete API reference for all GAIA AIR services.</p>
+                        </a>
+                        <a href="https://docs.gaiaair.org/examples" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Examples & Tutorials</h5>
+                            </div>
+                            <p class="mb-1">Step-by-step tutorials and example implementations.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>GAIA AIR</h5>
+                    <p>Ethical-Semantic Foundation for Federated Intelligent Systems</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#ontologies" class="text-white">Ontologies</a></li>
+                        <li><a href="#tools" class="text-white">Tools</a></li>
+                        <li><a href="#documentation" class="text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: <a href="mailto:ontology@gaiaair.org" class="text-white">ontology@gaiaair.org</a></p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="text-center">
+                <p>&copy; 2025 GAIA AIR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
