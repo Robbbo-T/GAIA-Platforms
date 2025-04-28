@@ -31,6 +31,7 @@ Federation within COAFI enables seamless integration and interoperability across
 - **Federated Identity Management:** Ensuring secure and consistent identity management across all domains.
 - **Policy Synchronization:** Aligning policies and standards across federated domains to ensure consistency and compliance.
 - **Interoperability Frameworks:** Establishing frameworks that enable different domains to communicate and operate seamlessly.
+- **Electrical Power Systems Design:** Incorporating detailed specifications for the electrical power systems of the AMPEL360XWLRGA aircraft, ensuring efficient and reliable power distribution.
 
 ## Ethics
 

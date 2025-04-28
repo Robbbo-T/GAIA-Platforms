@@ -80,6 +80,12 @@ utids: TBD
 
 ---
 
+## 7. Electrical Power Systems Design Document for AMPEL360XWLRGA *(INFO-SPEC)*
+- [Electrical Power Systems Design Document for AMPEL360XWLRGA (GP-AM-24-...-SPEC-A)](./DOCS/GP-AM-24-...-SPEC-A.md)
+- [Specific Electrical Support Design for Q-01 Quantum Propulsion (GP-AM-72-Q01-ELECTRICALSUPPORT-SPEC-A.md)](./DOCS/GP-AM-72-Q01-ELECTRICALSUPPORT-SPEC-A.md)
+
+---
+
 # 🧭 Navigation *(INFO-OV)*
 - [← Back to GAIA Platforms Main Index](../../README.md)
 - [← Back to COAFI Main Directory](../README.md)

@@ -26,6 +26,8 @@ utids: TBD
 
 The Canonical Orchestrated Architecture File Index (COAFI) is a foundational framework within the GAIA Platforms initiative. It serves as the master documentation, traceability, and compliance backbone across all GAIA domains, ensuring a unified and consistent approach to managing information, processes, and systems.
 
+The COAFI framework now includes the Electrical Power Systems Design Document for AMPEL360XWLRGA, which provides detailed specifications for the electrical power systems of the AMPEL360XWLRGA aircraft.
+
 ## Purpose
 
 The primary purpose of COAFI is to provide a comprehensive and structured approach to organizing and managing the vast array of documents, processes, and systems within the GAIA Platforms initiative. This includes:
@@ -35,6 +37,7 @@ The primary purpose of COAFI is to provide a comprehensive and structured approa
 - **Compliance:** Ensuring compliance with defined policies, standards, and regulations.
 - **Federation:** Enabling seamless integration and interoperability across diverse GAIA domains.
 - **Ethics and Governance:** Embedding ethical considerations and governance frameworks into the documentation and processes.
+- **Electrical Power Systems Design:** Incorporating detailed specifications for the electrical power systems of the AMPEL360XWLRGA aircraft.
 
 ## Key Components
 
@@ -45,6 +48,7 @@ COAFI is composed of several key components that work together to achieve its pu
 - **Compliance Framework:** A set of policies, standards, and regulations that all documents and processes must adhere to, ensuring consistency and compliance across the GAIA ecosystem.
 - **Federation Gateway:** A mechanism for managing communication and policy synchronization across federated domains, ensuring interoperability and alignment with global standards.
 - **Ethical Governance:** A framework for embedding ethical considerations into the documentation and processes, ensuring that all actions and decisions are aligned with GAIA's core values.
+- **Electrical Power Systems Design:** Detailed specifications for the electrical power systems of the AMPEL360XWLRGA aircraft, ensuring efficient and reliable power distribution.
 
 ## Goals and Objectives
 
@@ -55,6 +59,7 @@ The goals and objectives of COAFI are to:
 - **Maintain Compliance:** Ensure that all documents and processes adhere to defined policies, standards, and regulations, reducing the risk of non-compliance.
 - **Promote Federation:** Enable seamless integration and interoperability across diverse GAIA domains, fostering collaboration and innovation.
 - **Support Ethical Governance:** Embed ethical considerations into the documentation and processes, ensuring that all actions and decisions are aligned with GAIA's core values.
+- **Optimize Electrical Power Systems:** Ensure the efficient and reliable design and implementation of electrical power systems for the AMPEL360XWLRGA aircraft.
 
 ## Conclusion
 
