@@ -1,0 +1,709 @@
+### OpenAPI Specification for GAIA AIR Documentation System API (`00-00-SD-002.yaml`)
+
+**GenAI Proposal Status**: DRAFT - This generated OpenAPI specification requires validation against the actual API implementation (`server.js`) and approval by authorized stakeholders.
+
+```yaml
+openapi: 3.1.0
+info:
+  title: GAIA AIR Documentation System API
+  version: 1.0.0
+  description: |
+    REST API for managing and accessing technical documentation within the GAIA AIR platform.
+    Provides endpoints for navigating the document hierarchy (based on ATA structure),
+    retrieving document metadata and content, managing cross-references, viewing history,
+    and searching documents.
+  contact:
+    name: GAIA AIR Systems Architecture
+    url: https://gaia-air-platform.example.com # Placeholder
+    email: arch@gaia-air.example.com # Placeholder
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+  # - url: https://api.gaia-air.com/docs/v1 # Placeholder for production
+  #   description: Production Server
+
+paths:
+  /hierarchy:
+    get:
+      summary: Get Complete Document Hierarchy
+      description: Retrieves the full ATA chapter/system/subsystem hierarchy tree.
+      operationId: getHierarchyTree
+      tags:
+        - Hierarchy
+      responses:
+        '200':
+          description: Successful retrieval of the hierarchy tree.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/HierarchyNode' # Reference the detailed node schema
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /hierarchy/{nodeId}/documents:
+    get:
+      summary: Get Documents for Hierarchy Node
+      description: Retrieves a list of document metadata associated with a specific chapter, system, or subsystem node.
+      operationId: getDocumentsForNode
+      tags:
+        - Hierarchy
+        - Documents
+      parameters:
+        - name: nodeId
+          in: path
+          required: true
+          description: The ID of the hierarchy node (e.g., '24', '24-60', '24-60-10'). Format checked by server.
+          schema:
+            type: string
+            pattern: '^\d{2}(-\d{2}(-\d{2})?)?$' # Allows XX, XX-YY, XX-YY-ZZ
+      responses:
+        '200':
+          description: Successful retrieval of documents for the node.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DocumentMetadataSummary' # Summary for list views
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound' # If node ID itself is valid format but not found
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /documents/{docId}:
+    get:
+      summary: Get Document Metadata
+      description: Retrieves detailed metadata for a specific document ID.
+      operationId: getDocumentMetadata
+      tags:
+        - Documents
+      parameters:
+        - $ref: '#/components/parameters/DocId'
+      responses:
+        '200':
+          description: Successful retrieval of document metadata.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    $ref: '#/components/schemas/DocumentMetadataDetailed' # Detailed metadata
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /documents/{docId}/content:
+    get:
+      summary: Get Document Content
+      description: Retrieves the content of a specific document, either from the database or the filesystem.
+      operationId: getDocumentContent
+      tags:
+        - Documents
+      parameters:
+        - $ref: '#/components/parameters/DocId'
+      responses:
+        '200':
+          description: Successful retrieval of document content.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      doc_id:
+                        type: string
+                        pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+                      content:
+                        type: string
+                        description: The document content (e.g., Markdown).
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound' # If doc or content file is not found
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /documents/{docId}/cross-references:
+    get:
+      summary: Get Document Cross-References
+      description: Retrieves both incoming and outgoing cross-references for a specific document.
+      operationId: getDocumentCrossReferences
+      tags:
+        - Documents
+        - Relationships
+      parameters:
+        - $ref: '#/components/parameters/DocId'
+      responses:
+        '200':
+          description: Successful retrieval of cross-references.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    $ref: '#/components/schemas/CrossReferenceList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      summary: Add Document Cross-Reference
+      description: Creates a new cross-reference relationship from the specified document to a target document.
+      operationId: addCrossReference
+      tags:
+        - Documents
+        - Relationships
+      parameters:
+        - $ref: '#/components/parameters/DocId'
+      requestBody:
+        description: Details of the cross-reference to create.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CrossReferenceInput'
+      responses:
+        '201':
+          description: Cross-reference successfully created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/CrossReferenceOutput'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound' # If source or target doc not found
+        '409':
+          $ref: '#/components/responses/Conflict' # If reference already exists
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /documents/{docId}/history:
+    get:
+      summary: Get Document Revision History
+      description: Retrieves the revision history for a specific document.
+      operationId: getDocumentHistory
+      tags:
+        - Documents
+        - History
+      parameters:
+        - $ref: '#/components/parameters/DocId'
+      responses:
+        '200':
+          description: Successful retrieval of document history.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/RevisionHistoryItem'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /search:
+    get:
+      summary: Search Documents
+      description: Performs a full-text search across document metadata and content.
+      operationId: searchDocuments
+      tags:
+        - Search
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The search term or query string.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful search operation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  query:
+                    type: string
+                    description: The search query used.
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResultItem'
+        '400':
+          $ref: '#/components/responses/BadRequest' # If query param 'q' is missing or invalid query format
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /stats:
+    get:
+      summary: Get System Statistics
+      description: Retrieves overall statistics about the documentation system content.
+      operationId: getSystemStats
+      tags:
+        - Statistics
+      responses:
+        '200':
+          description: Successful retrieval of system statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    $ref: '#/components/schemas/SystemStats'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    # --- Hierarchy Schemas ---
+    HierarchyNode:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Node ID (Chapter, System, or Subsystem format)
+        type:
+          type: string
+          enum: [chapter, system, subsystem]
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        domain_code:
+          type: string
+          nullable: true
+          description: Only present for chapter nodes.
+        documentCount:
+          type: integer
+          format: int32
+          description: Only present for subsystem nodes.
+        children:
+          type: array
+          items:
+            # Recursive reference - Note: Full recursion support varies by tool.
+            # Describing structure here. Actual implementation might flatten or use links.
+             $ref: '#/components/schemas/HierarchyNode'
+      required:
+        - id
+        - type
+        - title
+
+    # --- Document Schemas ---
+    DocumentMetadataSummary:
+      description: Basic metadata suitable for lists.
+      type: object
+      properties:
+        doc_id:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+        title:
+          type: string
+        doc_type:
+          type: string
+        revision:
+          type: string
+          maxLength: 1
+        status:
+          type: string
+          enum: [DRAFT, REVIEW, APPROVED, OBSOLETE]
+        file_path:
+           type: string
+        modified_date:
+           type: string
+           format: date-time
+           nullable: true
+      required:
+        - doc_id
+        - title
+        - doc_type
+        - revision
+        - status
+        - file_path
+
+    DocumentMetadataDetailed:
+      description: Full metadata for a single document view.
+      allOf:
+        - $ref: '#/components/schemas/DocumentMetadataSummary'
+        - type: object
+          properties:
+            subsystem_id:
+              type: string
+              pattern: '^\d{2}-\d{2}-\d{2}$'
+            subsystem_title:
+              type: string
+            system_id:
+              type: string
+              pattern: '^\d{2}-\d{2}$'
+            system_title:
+              type: string
+            chapter_id:
+              type: string
+              pattern: '^\d{2}$'
+            chapter_title:
+              type: string
+            doc_type_name:
+               type: string
+            project_id:
+               type: string
+            project_name:
+               type: string
+            author:
+              type: string
+              nullable: true
+            created_date:
+              type: string
+              format: date-time
+            metadata: # Renamed from metadata_ in SQL
+              type: object
+              nullable: true
+              description: Additional JSON metadata.
+          required:
+             - subsystem_id
+             - subsystem_title
+             - system_id
+             - system_title
+             - chapter_id
+             - chapter_title
+             - doc_type_name
+             - project_id
+             - project_name
+             - created_date
+
+    # --- Cross-Reference Schemas ---
+    CrossReferenceItem:
+      type: object
+      properties:
+        reference_id:
+          type: string
+          format: uuid
+          nullable: true # May not be present if directly queried
+        ref_type:
+          type: string
+          enum: [DEPENDS_ON, REFERENCES, SUPERSEDES, IMPLEMENTS, VERIFIES]
+        description:
+          type: string
+          nullable: true
+        # Properties vary depending on incoming/outgoing context
+        target_doc_id:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+        target_title:
+          type: string
+        target_doc_type:
+          type: string
+        target_revision:
+          type: string
+          maxLength: 1
+        source_doc_id:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+        source_title:
+          type: string
+        source_doc_type:
+          type: string
+        source_revision:
+          type: string
+          maxLength: 1
+
+    CrossReferenceList:
+      type: object
+      properties:
+        outgoing:
+          type: array
+          items:
+            $ref: '#/components/schemas/CrossReferenceItem'
+        incoming:
+          type: array
+          items:
+            $ref: '#/components/schemas/CrossReferenceItem'
+
+    CrossReferenceInput:
+      type: object
+      properties:
+        targetDocId:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+          description: The doc_id of the document being referenced.
+        refType:
+          type: string
+          enum: [DEPENDS_ON, REFERENCES, SUPERSEDES, IMPLEMENTS, VERIFIES]
+          description: The type of relationship.
+        description:
+          type: string
+          nullable: true
+          description: Optional description of the reference.
+      required:
+        - targetDocId
+        - refType
+
+    CrossReferenceOutput:
+       type: object
+       properties:
+         reference_id:
+           type: string
+           format: uuid
+         source_doc_id:
+           type: string
+           pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+         target_doc_id:
+           type: string
+           pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+         ref_type:
+           type: string
+           enum: [DEPENDS_ON, REFERENCES, SUPERSEDES, IMPLEMENTS, VERIFIES]
+         description:
+           type: string
+           nullable: true
+       required:
+         - reference_id
+         - source_doc_id
+         - target_doc_id
+         - ref_type
+
+    # --- History Schema ---
+    RevisionHistoryItem:
+      type: object
+      properties:
+        history_id: # Only present for historical records
+          type: string
+          format: uuid
+          nullable: true
+        revision:
+          type: string
+          maxLength: 1
+        version:
+          type: string
+        change_description:
+          type: string
+          nullable: true
+        changed_by:
+          type: string
+          nullable: true
+        changed_date:
+          type: string
+          format: date-time
+        isCurrent: # Added by API logic, not in DB table
+           type: boolean
+           description: Indicates if this is the current active revision.
+      required:
+        - revision
+        - version
+        - changed_date
+
+    # --- Search Schema ---
+    SearchResultItem:
+      description: Represents a single document in search results. Based on view/function output.
+      type: object
+      properties:
+        doc_id:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$'
+        title:
+          type: string
+        doc_type:
+          type: string
+        subsystem_id:
+          type: string
+          pattern: '^\d{2}-\d{2}-\d{2}$'
+        system_id:
+          type: string
+          pattern: '^\d{2}-\d{2}$'
+        chapter_id:
+          type: string
+          pattern: '^\d{2}$'
+        file_path:
+           type: string
+        relevance:
+          type: number
+          format: float
+          description: Relevance score from the search engine.
+      required:
+        - doc_id
+        - title
+        - doc_type
+        - subsystem_id
+        - system_id
+        - chapter_id
+        - file_path
+        - relevance
+
+    # --- Statistics Schema ---
+    SystemStats:
+      type: object
+      properties:
+        counts:
+          type: object
+          properties:
+            chapters:
+              type: integer
+            systems:
+              type: integer
+            subsystems:
+              type: integer
+            documents:
+              type: integer
+            references:
+              type: integer
+        documentsByType:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              count:
+                type: integer
+        documentsByStatus:
+          type: array
+          items:
+            type: object
+            properties:
+              status:
+                type: string
+              count:
+                type: integer
+
+    # --- Error Schema ---
+    Error:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+        error:
+          type: string
+          description: Optional detailed error message (dev mode only).
+          nullable: true
+      required:
+        - status
+        - message
+
+  parameters:
+    DocId:
+      name: docId
+      in: path
+      required: true
+      description: The unique document identifier (XX-YY-ZZ-III format).
+      schema:
+        type: string
+        pattern: '^\d{2}-\d{2}-\d{2}-\d{3}$' # Enforce format
+
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Invalid request syntax or parameters (e.g., invalid ID format).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: The request conflicts with the current state of the server (e.g., item already exists).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: An unexpected server error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+tags: # Optional grouping for documentation tools like Swagger UI
+  - name: Hierarchy
+    description: Operations related to the document hierarchy structure.
+  - name: Documents
+    description: Operations for retrieving and managing individual documents.
+  - name: Relationships
+    description: Operations related to document cross-references.
+  - name: History
+    description: Operations for viewing document revision history.
+  - name: Search
+    description: Document search operations.
+  - name: Statistics
+    description: Operations for retrieving system statistics.
+```
+
+---
+
+**Next Steps & Considerations:**
+
+1.  **Validation:** This YAML should be validated using an OpenAPI validator tool to ensure syntactic correctness.
+2.  **Refinement:** Review against the actual `server.js` implementation to ensure all parameters, request bodies, and response schemas match exactly. Pay close attention to required vs. optional fields and data types.
+3.  **Schema Detail:** The `HierarchyNode` schema is simplified. A production version might require separate schemas for Chapter, System, Subsystem to better represent the data and potentially avoid deep recursion issues in some tooling.
+4.  **Error Handling:** Define more specific error responses (e.g., separate 400 responses for different validation errors) if needed.
+5.  **Security:** Add security schemes (`components/securitySchemes` and `security` at the root or path/operation level) once authentication/authorization is implemented.
+6.  **Documentation:** Add more detailed descriptions and examples to parameters, request bodies, and responses for better clarity.
+7.  **Versioning:** Consider API versioning strategies (e.g., `/api/v1/hierarchy`) if significant future changes are anticipated.
+8.  **Integration:** This OpenAPI spec file (`00-00-SD-002.yaml`) should itself be ingested into the documentation system under `doc_id` `00-00-SD-002`, `doc_type` `API_SPEC`.
+
+This OpenAPI specification provides the formal contract for the API, crucial for frontend development, testing, and ensuring consistent interaction with the backend.
+
+Ready for the next mission, Comandante? Shall we proceed with **`Launch-GP-DOCS-MULTI-SD`** (Extending for Multi-Domain)?
