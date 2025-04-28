@@ -139,7 +139,7 @@ GAIA AIR License v1.0
 
 GAIA AIR Ontology Team[ontology@gaiaair.org](mailto:ontology@gaiaair.org)
 
-```plaintext
+
 
 ## Sample amedeo.owl for Testing
 
