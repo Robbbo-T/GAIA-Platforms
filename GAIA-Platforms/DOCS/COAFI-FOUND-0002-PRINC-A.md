@@ -55,6 +55,10 @@ COAFI is designed with sustainability in mind, ensuring that its operations and 
 
 COAFI is committed to continuous improvement, regularly reviewing and updating its processes, standards, and guidelines to ensure that it remains effective and relevant. This principle fosters a culture of innovation and adaptability within the GAIA Platforms initiative.
 
+### 8. Electrical Power Systems Design
+
+COAFI incorporates detailed specifications for the electrical power systems of the AMPEL360XWLRGA aircraft, ensuring efficient and reliable power distribution.
+
 ## Conclusion
 
 The core operating principles of COAFI provide a solid foundation for its development, implementation, and management. By adhering to these principles, COAFI ensures that it remains a robust, reliable, and effective framework for documentation, traceability, and compliance within the GAIA Platforms initiative.
