@@ -1,4 +1,20 @@
 import os
+import sys
+import datetime
+import re
+from pathlib import Path
+
+# InfoCode subdirectories to ensure in each component directory
+INFOCODE_DIRS = [
+    'OV',    # Overview documents
+    'SDD',   # System Design Descriptions
+    'SPEC',  # Specifications
+    'TEST',  # Testing Plans
+    'PROC',  # Procedures
+    'PLAN',  # Program Management Plans
+    'IDX',   # Indexes and Cross-References
+    'NEXUS'  # Interconnection Points (Federated)
+]
 
 # Define the directory structure based on the proposal
 # Using a list of paths relative to the script's location (repo root)
@@ -389,4 +405,159 @@ dirs_to_create = [
     "GAIA-PLATFORMS/GP-ADR/PLT",
     "GAIA-PLATFORMS/GP-ADR/PLT/CH-01",
     "GAIA-PLATFORMS/GP-ADR/OPERATIONS",
-    "GAIA-PLATFORMS/GP-ADR/OPERATIONS/CH-
+    "GAIA-PLATFORMS/GP-ADR/OPERATIONS/CH-02",
+    "GAIA-PLATFORMS/GP-ADR/SPECIAL",
+    "GAIA-PLATFORMS/GP-ADR/SPECIAL/CH-99",
+    "GAIA-PLATFORMS/SharedServices/GP-SPECIAL",
+]
+
+# Component directories that should have InfoCode subdirectories
+component_patterns = [
+    r"GAIA-PLATFORMS/GAIA-AIRs/GP-AM/AMPEL/ATA-\d{2}-.*",
+    r"GAIA-PLATFORMS/GAIA-SPACEs/GP-AS/AMPELPLUS/AS-\d{2}-.*",
+    r"GAIA-PLATFORMS/SharedServices/GP-COM/.*/CH-\d{2}",
+    r"GAIA-PLATFORMS/SharedServices/GP-RAME/.*/CH-\d{2}",
+    r"GAIA-PLATFORMS/SharedServices/GP-SUPL/.*/CH-\d{2}",
+]
+
+def create_dir(dir_path):
+    """Creates a directory if it doesn't exist"""
+    try:
+        os.makedirs(dir_path, exist_ok=True)
+        print(f"Created directory: {dir_path}")
+    except Exception as e:
+        print(f"Error creating directory {dir_path}: {e}")
+
+def create_file(file_path, content=''):
+    """Creates a file with content if it doesn't exist"""
+    try:
+        dir_name = os.path.dirname(file_path)
+        if dir_name:
+            os.makedirs(dir_name, exist_ok=True)
+        
+        if not os.path.exists(file_path):
+            with open(file_path, 'w') as f:
+                f.write(content)
+            print(f"Created file: {file_path}")
+        else:
+            print(f"File already exists: {file_path}")
+    except Exception as e:
+        print(f"Error creating file {file_path}: {e}")
+
+def create_gitkeep(dir_path):
+    """Creates a .gitkeep file in a directory"""
+    create_file(os.path.join(dir_path, '.gitkeep'), '')
+
+def is_component_dir(dir_path):
+    """Checks if a directory matches any component pattern"""
+    for pattern in component_patterns:
+        if re.match(pattern, dir_path):
+            return True
+    return False
+
+def add_infocode_dirs(dir_path):
+    """Adds InfoCode subdirectories to a component directory"""
+    print(f"Adding InfoCode directories to: {dir_path}")
+    for infocode_dir in INFOCODE_DIRS:
+        full_path = os.path.join(dir_path, infocode_dir)
+        create_dir(full_path)
+        create_gitkeep(full_path)
+
+def create_version_file(division):
+    """Creates a VERSION.md file for a major division"""
+    version_path = os.path.join("GAIA-PLATFORMS", division, "VERSION.md")
+    content = f"""# {division} – Version Record
+
+## Current Version
+- v0.1.0 (Initial Structure)
+
+## Major Milestones
+- v0.1.0 – Initial structure creation based on AToC.md COAFI standard ({datetime.date.today().isoformat()})
+- v0.2.0 – [Future Milestone] (Planned)
+
+## Component Version Matrix
+
+| Component | Version | Last Updated | Status | Dependencies |
+|-----------|---------|--------------|--------|-------------|
+"""
+    create_file(version_path, content)
+
+def create_special_hub():
+    """Creates the GP-SPECIAL hub"""
+    special_hub_dir = "GAIA-PLATFORMS/SharedServices/GP-SPECIAL"
+    create_dir(special_hub_dir)
+    
+    # Create README.md
+    readme_path = os.path.join(special_hub_dir, "README.md")
+    readme_content = """# GP-SPECIAL Hub
+
+This centralized index tracks all Special/Emerging Technologies across GAIA PLATFORMS domains.
+
+See [index.md](./index.md) for a complete cross-reference of all special technology directories.
+"""
+    create_file(readme_path, readme_content)
+    
+    # Create index.md
+    index_path = os.path.join(special_hub_dir, "index.md")
+    index_content = f"""# GP-SPECIAL Hub - Emerging Technologies Index
+
+Last updated: {datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+| Domain | Path | Description | Status |
+|--------|------|-------------|--------|
+| AIRs | [ATA-99-SPECIAL](/GAIA-AIRs/GP-AM/AMPEL/ATA-99-SPECIAL) | AIRs Special/Emerging Tech | Active |
+| SPACEs | [AS-99-SPECIAL](/GAIA-SPACEs/GP-AS/AMPELPLUS/AS-99-SPECIAL) | SPACEs Special/Emerging Tech | Active |
+| SharedServices | [CH-99](/SharedServices/GP-COM/SPECIAL/CH-99) | COM Special/Emerging Tech | Active |
+| SharedServices | [CH-99](/SharedServices/GP-RAME/SPECIAL/CH-99) | RAME Special/Emerging Tech | Active |
+| SharedServices | [CH-99](/SharedServices/GP-SUPL/SPECIAL/CH-99) | SUPL Special/Emerging Tech | Active |
+"""
+    create_file(index_path, index_content)
+
+def main():
+    """Main function to create the directory structure"""
+    print("Starting GAIA PLATFORMS directory structure creation...")
+    
+    # Create all directories and files
+    count = 0
+    for item in dirs_to_create:
+        if item.endswith('/'):
+            # Remove trailing slash if present
+            item = item[:-1]
+            
+        if '.' in os.path.basename(item):
+            # It's a file
+            create_file(item)
+        else:
+            # It's a directory
+            create_dir(item)
+        
+        count += 1
+        if count % 50 == 0:
+            print(f"Progress: {count}/{len(dirs_to_create)} items created")
+    
+    # Add InfoCode subdirectories to component directories
+    print("\nAdding InfoCode subdirectories to component directories...")
+    for dir_path in dirs_to_create:
+        if '.' not in os.path.basename(dir_path) and is_component_dir(dir_path):
+            add_infocode_dirs(dir_path)
+    
+    # Create VERSION.md files for major divisions
+    print("\nCreating VERSION.md files for major divisions...")
+    major_divisions = [
+        "GAIA-AIRs",
+        "GAIA-SPACEs",
+        "GAIA-GREEN-TECHNOLOGIES"
+    ]
+    
+    for division in major_divisions:
+        create_version_file(division)
+    
+    # Create GP-SPECIAL hub
+    print("\nCreating GP-SPECIAL hub...")
+    create_special_hub()
+    
+    print("\nGAIA PLATFORMS directory structure creation completed successfully!")
+    print(f"Created {count} directories and files.")
+
+if __name__ == "__main__":
+    main()
